@@ -19,10 +19,14 @@ var wheniworkapi = {
     schedule: {},
     accounts: {},
     login: {},
-    users: {},
+    users: {
+        list: list_users
+    },
     positions: {},
     locations: {},
-    sites: {},
+    sites: {
+        list: list_sites
+    },
     blocks: {},
     requests: {},
     swaps: {},
@@ -133,12 +137,175 @@ function list_shifts(options) {
     
     //  EXECUTE ASYNC WORK
     return new Promise(function(resolve, reject) {
-
+        //  GET REQURED DATA
         wiw.get('shifts', options)
         .then(res => { resolve(res.shifts); })
         .catch(err => { reject(err); })
     }); 
 
+};
+
+/*
+*   LIST USERS
+*
+*   Get a list of users, optionally filtered by ID or location. See the parameters below for all the options.
+*   
+*   HTTP REQUEST: GET https://api.wheniwork.com/2/users
+*
+*   @param: ids (integer array // The IDs of the users to retrieve, as a comma-separated list (e.g. 9,17,42).)
+*   @param: location_id (integer, integer array // The ID of the location to get users for. For multiple locations, enter a list of location IDs separated by commas.)
+*   @param: show_deleted (boolean // TWhether to include deleted users in the results. Defaults to false.)
+*   
+*   @return: EXAMPLE OBJECT
+*   {
+        "users": [
+            {
+            "id": 4364,
+            "login_id": 2112,
+            "account_id": 10000,
+            "role": 2,
+            "email": "goldiewilson@hillvalleycalifornia.gov",
+            "first_name": "Goldie",
+            "last_name": "Wilson",
+            "phone_number": "555-555-5555",
+            "employee_code": "1020",
+            "activated": true,
+            "notes": "",
+            "hours_preferred": 40,
+            "hours_max": 40,
+            "hourly_rate": 15.5,
+            "type": 1,
+            "last_login": "Mon, 05 Oct 2015 18:26:44 -0500",
+            "positions": [
+                12284,
+                9554
+            ],
+            "locations": [
+                34,
+                58934
+            ],
+            "is_deleted": false,
+            "is_hidden": false,
+            "is_payroll": false,
+            "is_private": false,
+            "is_trusted": false
+            },
+            {
+            "id": 27384,
+            "login_id": 2112,
+            "account_id": 10000,
+            "role": 2,
+            "email": "jen.parker@example.com",
+            "first_name": "Jennifer",
+            "last_name": "Parker",
+            "phone_number": "555-555-5555",
+            "employee_code": "1020",
+            "activated": true,
+            "notes": "",
+            "hours_preferred": 40,
+            "hours_max": 40,
+            "hourly_rate": 15.5,
+            "type": 1,
+            "last_login": "Mon, 05 Oct 2015 18:26:44 -0500",
+            "positions": [
+                12284,
+                9554
+            ],
+            "locations": [
+                34,
+                58934
+            ],
+            "is_deleted": false,
+            "is_hidden": false,
+            "is_payroll": false,
+            "is_private": false,
+            "is_trusted": false
+            }
+        ]
+*   }
+*   
+*/
+function list_users(options) {
+    //  DEFINE LOCAL VARIABLES
+    
+    //  EXECUTE ASYNC WORK
+    return new Promise(function(resolve, reject) {
+        //  GET REQURED DATA
+        wiw.get('users', options)
+        .then(res => { resolve(res.users); })
+        .catch(err => { reject(err); })
+    }); 
+
+};
+
+/*
+*   LIST SITES
+*
+*   Gets a list of all Sites in your account.
+*
+*   HTTP REQUEST: GET https://api.wheniwork.com/2/sites
+*
+*   @param: include_deleted (boolean // Whether to include deleted Sites in the results.)
+*   
+*   @return: EXAMPLE OBJECT
+*   {
+        "sites": [
+            {
+            "id": 9,
+            "account_id": 10000,
+            "location_id": 136,
+            "name": "Twin Pines",
+            "color": "cccccc",
+            "description": "",
+            "address": "1600 S Azusa Ave, City of Industry, CA 91748",
+            "coordinates": [
+                "33.9935161",
+                "-117.9264044"
+            ],
+            "latitude": "33.9935161",
+            "longitude": "-117.9264044",
+            "place_id": "",
+            "created_at": "Fri, 13 Jun 2014 11:53:00 -0500",
+            "updated_at": "Fri, 13 May 2016 10:59:41 -0500",
+            "is_deleted": false,
+            "deleted_at": "",
+            "radius": 1000
+            },
+            {
+            "id": 4,
+            "account_id": 10000,
+            "location_id": 136,
+            "name": "Lone Pine",
+            "color": "cccccc",
+            "description": "",
+            "address": "1600 S Azusa Ave, City of Industry, CA 91748",
+            "coordinates": [
+                "33.9935161",
+                "-117.9264044"
+            ],
+            "latitude": "33.9935161",
+            "longitude": "-117.9264044",
+            "place_id": "",
+            "created_at": "Fri, 13 Jun 2014 11:53:00 -0500",
+            "updated_at": "Fri, 13 May 2016 10:59:41 -0500",
+            "is_deleted": false,
+            "deleted_at": "",
+            "radius": 1000
+            }
+        ]
+*   }
+*   
+*/
+function list_sites(options) {
+    //  DEFINE LOCAL VARIABLES
+    
+    //  EXECUTE ASYNC WORK
+    return new Promise(function(resolve, reject) {
+        //  GET REQURED DATA
+        wiw.get('sites', options)
+        .then(res => { resolve(res.sites); })
+        .catch(err => { reject(err); })
+    }); 
 };
 
 //  EXPORT THE MODULE
