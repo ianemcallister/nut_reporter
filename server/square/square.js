@@ -60,6 +60,7 @@ let square = {
 *   @param: order (optional) // The order in which payments are listed in the response.
 *   @param: limit (optional) // The maximum number of payments to return in a single response. This value cannot exceed  200. This value is always an integer.
 *   @param: include_partial (optional) // Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed.
+*   @param: cursor (optional) // String | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
 *   
 *   @return: EXAMPLE OBJECT - An array of zero or more Payment objects. This endpoint might paginate its results.
 *   [
@@ -203,7 +204,56 @@ let square = {
         }
 *   ]
 */
-function tx_payments_list() {
+function tx_payments_list(locationId, opts, cursor) {
+    //  DEFINE LOCAL VARIABLES
+    var self = this;
+    var apiInstance = new SquareConnect.TransactionsApi();
+    if(opts == undefined) opts = {};
+    opts['cursor'] = cursor;    // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+
+    console.log(locationId, opts.beginTime, opts.endTime);
+
+    //  RETURN ASYNC WORK
+    return new Promise(function(resolve, reject) {
+
+        //  HIT THE SQUARE SERVER
+        apiInstance.listTransactions(locationId, opts).then(function(data) {
+            
+            //  CHECK FOR A CURSOR
+            if(data.cursor != undefined) {
+
+                //  IF THE CURSOR WAS FOUND REVISIT THE LIST
+                tx_payments_list(locationId, opts, data.cursor)
+                .then(function success(s) {
+
+                    console.log(data.transactions.length);
+                    
+                    //  ITERATE THROUGH THE OLD DATA AND ADD IT TO THE NEWLY RETURNED DATA
+                    data.transactions.forEach(function(tx) {
+                        s.transactions.push(tx);
+                    });
+
+                    //  FULLFILL THE PROMISE
+                    resolve(s);
+
+                }).catch(function error(e) {
+                    //  FULL THE PROMISE IF ANY ERRORS WERE FOUND
+                    reject(e);
+                });
+
+            } else {
+
+                console.log('reachd the bottom of', locationId);
+
+                //  IF NO CURSOR WAS FOUND WE'VE REACHED THE BOTTOM OF THE LIST
+                resolve(data);
+            }
+            
+        }, function error(e) {
+            //  IF THERE WAS AN ERROR, FULLFILL THE PROMISE BY RETURNING IT
+            reject(e);
+        });
+    });
 
 };
 
@@ -261,9 +311,9 @@ function list_items(locationId, opts, cursor) {
     if(opts == undefined) opts = {};
     opts['batchToken'] = cursor;    // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
-    console.log(locationId);
-    console.log(opts);
-    console.log(cursor);
+    //console.log(locationId);
+    //console.log(opts);
+    //console.log(cursor);
     
     //  RETURN ASYNC WORK
     return new Promise(function(resolve,reject) {
@@ -284,7 +334,7 @@ function list_items(locationId, opts, cursor) {
                     });
 
                     //  FILLFILL THE PROMISE
-                    reslve(s);
+                    resolve(s);
 
                 }).catch(function error(e) {
                     reject(e);

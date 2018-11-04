@@ -1,0 +1,3560 @@
+[
+	{
+		"transactions": [
+			{
+				"id": "tWYkW7rdEx1DOKsnH1W5L33eV",
+				"location_id": "S4P16GQRK21CF",
+				"created_at": "2018-11-03T19:27:13Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "PdhXDrrMOKSNpaMQmeE6ksMF",
+						"location_id": "S4P16GQRK21CF",
+						"transaction_id": "tWYkW7rdEx1DOKsnH1W5L33eV",
+						"created_at": "2018-11-03T19:27:12Z",
+						"note": "Online Transaction",
+						"amount_money": {
+							"amount": 1699,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 79,
+							"currency": "USD"
+						},
+						"customer_id": "S9J4EG2B817V9FW14VN7T1RMZR",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "8635",
+								"fingerprint": "sq-1-K2liVqbdWN4nh0V1SIqJhyZYd_KglAtjpinL9VO95vJ7m3zvfB3hF99ro6MGfHyKNw"
+							},
+							"entry_method": "ON_FILE"
+						}
+					}
+				],
+				"product": "EXTERNAL_API"
+			},
+			{
+				"id": "tox8C5TTJKUgm8juujWBsmkeV",
+				"location_id": "S4P16GQRK21CF",
+				"created_at": "2018-11-03T19:26:51Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "SJVLY6X0QQry5WIARt9mutMF",
+						"location_id": "S4P16GQRK21CF",
+						"transaction_id": "tox8C5TTJKUgm8juujWBsmkeV",
+						"created_at": "2018-11-03T19:26:50Z",
+						"note": "Online Transaction",
+						"amount_money": {
+							"amount": 1699,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 79,
+							"currency": "USD"
+						},
+						"customer_id": "S9J4EG2B817V9FW14VN7T1RMZR",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "8635",
+								"fingerprint": "sq-1-K2liVqbdWN4nh0V1SIqJhyZYd_KglAtjpinL9VO95vJ7m3zvfB3hF99ro6MGfHyKNw"
+							},
+							"entry_method": "ON_FILE"
+						}
+					}
+				],
+				"product": "EXTERNAL_API"
+			}
+		]
+	},
+	{
+		"transactions": [
+			{
+				"id": "pQ0FlyfRNqGCCMX26bBck6ueV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T15:49:37Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "peVy18uvnx2enRytqsfyJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "pQ0FlyfRNqGCCMX26bBck6ueV",
+						"created_at": "2018-11-03T15:49:35Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "405AD31F-8779-498F-AB75-10D4526AE4A2"
+			},
+			{
+				"id": "16CnrWkwBZxDRb7JKwrHgF3eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T15:16:54Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "XjWDPcR9f5akh7ORIQ4yJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "16CnrWkwBZxDRb7JKwrHgF3eV",
+						"created_at": "2018-11-03T15:16:51Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "3F558302-871B-481A-AB06-3C1B3D8F120F"
+			},
+			{
+				"id": "Ze9i8uPcEmSg6qwfaD9QLJteV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:19:18Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "r1K3d8PdclXiITA3Khn1JQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "Ze9i8uPcEmSg6qwfaD9QLJteV",
+						"created_at": "2018-11-03T18:19:06Z",
+						"amount_money": {
+							"amount": 600,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 600,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "40B6F75C-0939-4A16-A9A1-F4E33AF1C3CE"
+			},
+			{
+				"id": "tGOxJ7isbMJWoF17uMAF8R4eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:19:13Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "xAU42M68LAELbpQdIm8uftMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "tGOxJ7isbMJWoF17uMAF8R4eV",
+						"created_at": "2018-11-03T18:19:01Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 36,
+							"currency": "USD"
+						},
+						"customer_id": "2FKQ9PQF453C8XFQQ5HJTCJJ58",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "8394",
+								"fingerprint": "sq-1-f_3L4s1AXiQzSAdiUqSD4AtTBNui49qpkbC5-nrTdlCDL_kawHKe1pHC_oJ6c7C14w"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "47C00053-34C4-4DF0-97F0-E7607A00BAB4"
+			},
+			{
+				"id": "pqzSlrYx4GvpDrNVGIy6po0eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:17:13Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "31dK9GfOSQ8V0yWXBEhPLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "pqzSlrYx4GvpDrNVGIy6po0eV",
+						"created_at": "2018-11-03T18:17:01Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "DB67E008-98B7-4122-A3D6-6AF8D6BEDC5C"
+			},
+			{
+				"id": "NkzqAEBcJLXh6AulsdAxMiyeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:14:25Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "bDZrqgWQiRScHkVgvMevJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "NkzqAEBcJLXh6AulsdAxMiyeV",
+						"created_at": "2018-11-03T18:14:13Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "04895C96-AE60-4C07-9F34-72434C43C6F6"
+			},
+			{
+				"id": "xgY87lQNjlYlZelNBamHmypeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:09:16Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "fqsPY21HM8FpJUidIxWEvzMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "xgY87lQNjlYlZelNBamHmypeV",
+						"created_at": "2018-11-03T18:09:10Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 19,
+							"currency": "USD"
+						},
+						"customer_id": "8HXBEZM5QH1YCV99BAGS5DXRB8",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "2822",
+								"fingerprint": "sq-1-d-3C--7D_rE8LmCWp9h2ufOi-sd4N8yWSVjlk9zZWfrlNrdW1uH5-LppTPT23kstBA"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "67840E1D-F54F-4BCA-8D49-E91E9080CE0B"
+			},
+			{
+				"id": "PTQT36U5u8dUarUrNsiGTz3eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:07:59Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "Flv9uFl8rgLUTmeQbUo8bsMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "PTQT36U5u8dUarUrNsiGTz3eV",
+						"created_at": "2018-11-03T18:07:52Z",
+						"amount_money": {
+							"amount": 600,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 17,
+							"currency": "USD"
+						},
+						"customer_id": "BYWGSKX4GS2YARTG0D675E1P6M",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "2707",
+								"fingerprint": "sq-1-BOEDXndKTAAYGzlkMp88YyNXfMnbQTgJXJ5ww5Z-0HwlG5h_DnOFX1JcR9E-7Nq34Q"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "016A0E25-3003-4731-8B62-4E7E8EC43A4F"
+			},
+			{
+				"id": "hwga3JzzReXSLAj7PWRNM4weV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:07:15Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "7Z6y83IFqQy2KtD5Xa2uKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "hwga3JzzReXSLAj7PWRNM4weV",
+						"created_at": "2018-11-03T18:06:14Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B28144E0-CED6-4A28-9CDF-B293147B7A07"
+			},
+			{
+				"id": "RyPZakhue0qDQ64WgU98avjeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:06:44Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "NL05EJQtFNVwTUWfbtbUsuMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "RyPZakhue0qDQ64WgU98avjeV",
+						"created_at": "2018-11-03T18:06:32Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 36,
+							"currency": "USD"
+						},
+						"customer_id": "PCVEVWG9710CEJF58K4PQP9ZVM",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "8291",
+								"fingerprint": "sq-1-ob0Oyy6nTkinARFir14gT6vbhdiVX0edZWJ8X21H4M_6KBf-nRYvqO4uKFEkbrM3Gw"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "4D910223-83F0-4367-BA46-FEC65E0382DA"
+			},
+			{
+				"id": "hCTTJ539FEBYly71cysBnH0eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:06:14Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "5c442WXfD6K4taUrWJ7vJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "hCTTJ539FEBYly71cysBnH0eV",
+						"created_at": "2018-11-03T18:04:29Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "836A99F8-E496-4AFB-A8C9-002809F35FF1"
+			},
+			{
+				"id": "FSG7oT33488e8p4jWR7PT1qeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:00:14Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "9KO8ST3noGNMygaCURsXLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "FSG7oT33488e8p4jWR7PT1qeV",
+						"created_at": "2018-11-03T17:59:04Z",
+						"amount_money": {
+							"amount": 2500,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2500,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "20F646B8-DF16-4E32-BE19-A6084417D34D"
+			},
+			{
+				"id": "h08NguO4KlkLvrjQ9EX6zdweV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:58:27Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "DfhDNOWpUWrbRVLhSz0nKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "h08NguO4KlkLvrjQ9EX6zdweV",
+						"created_at": "2018-11-03T17:57:57Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "A10D28FC-565B-4C3D-BB57-0912C98DA980"
+			},
+			{
+				"id": "r1Kb7C9eT3iDj3VyJSOzzEgeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:56:30Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "nZt5MHOPpqVf8IbP5aoCKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "r1Kb7C9eT3iDj3VyJSOzzEgeV",
+						"created_at": "2018-11-03T17:56:19Z",
+						"amount_money": {
+							"amount": 1400,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 600,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "FF90A1F9-98E9-4550-933D-8AE4C7F03A53"
+			},
+			{
+				"id": "pEqBOXHhKi4IBoZSiHvk8v7eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:49:53Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "f3SbuGUAhAY67ekfMrDLLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "pEqBOXHhKi4IBoZSiHvk8v7eV",
+						"created_at": "2018-11-03T17:49:32Z",
+						"amount_money": {
+							"amount": 2600,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 4000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1400,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "8600B72E-9E3C-4522-85BB-0783513D4C20"
+			},
+			{
+				"id": "btKtCT6mKJ45e3wUmkrd4L6eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:45:37Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "tmqn7c4k6fgv1Yb1Ux6tKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "btKtCT6mKJ45e3wUmkrd4L6eV",
+						"created_at": "2018-11-03T17:45:18Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "F55309D9-8B73-4BF7-B8DA-AA98505A82F4"
+			},
+			{
+				"id": "xMArelSDx28qJu5DboT8s6feV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:43:00Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Vwr6Np3eGxVcfPTYFHnvKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "xMArelSDx28qJu5DboT8s6feV",
+						"created_at": "2018-11-03T17:42:59Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "145CEF22-5018-4F5C-A474-28836F12EF06"
+			},
+			{
+				"id": "FIbgo3ureVN6A6vJoY3Y7wheV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:42:15Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "TNK27VTTS0KLK9LnZRdILQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "FIbgo3ureVN6A6vJoY3Y7wheV",
+						"created_at": "2018-11-03T17:41:56Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "157DA895-2816-4A50-AC41-3CFAFEE967ED"
+			},
+			{
+				"id": "XVzdhbZMiLPFQu0M277XqMseV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:40:13Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "yK94DvwWg87DFgkrqH5ZXuMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "XVzdhbZMiLPFQu0M277XqMseV",
+						"created_at": "2018-11-03T17:40:02Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 19,
+							"currency": "USD"
+						},
+						"customer_id": "8R9MBSNCGS6ARQFMB0ZTPSV6M4",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "4364",
+								"fingerprint": "sq-1-NpJvlmhUraOKCq2yQL3ka8Ww-XjO156fdtchdnM62hsqCLnMGAA0GYRvPXL1xQRGWg"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "C377F96B-B93E-4C6A-BB03-BC8620BA6A04"
+			},
+			{
+				"id": "bNUSkMxsA4E6FZnt5II26sqeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:39:09Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "JvmBEjbVzsEEpqmkJTX0uwMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "bNUSkMxsA4E6FZnt5II26sqeV",
+						"created_at": "2018-11-03T17:39:00Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 36,
+							"currency": "USD"
+						},
+						"customer_id": "GYFN0F8CMN5VGKSFMD2H80X3GG",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "8024",
+								"fingerprint": "sq-1-Q7KC_R0qfEf4nE73DYYG9BCG7sIC75GgRfvY14L-rMjRKMEA7gmxdFoqC_inpCI6Cw"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "60F3350C-0EC9-4E62-B1F0-6E19D45BE659"
+			},
+			{
+				"id": "r7hTwNdYtGn7x7iv9QON3GteV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:35:23Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "jKhvXVfurA5waapNq2MPbxMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "r7hTwNdYtGn7x7iv9QON3GteV",
+						"created_at": "2018-11-03T17:35:11Z",
+						"amount_money": {
+							"amount": 1400,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 39,
+							"currency": "USD"
+						},
+						"customer_id": "V3F3P8X3TN3HEQQTKX3005GP1M",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "1307",
+								"fingerprint": "sq-1-fVpeRC5_ucz4_-oZJ7pN3m3u0ePb779M7KrwkJziajpjNvK_i6MH_WcIBlldJojkkA"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "F89F3A3A-0EA1-4A0D-875D-C6713A120D96"
+			},
+			{
+				"id": "rhuijyX9JK98u3jFukZfnaweV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:32:38Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "jp40bu7scnjEz8xW21nxJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "rhuijyX9JK98u3jFukZfnaweV",
+						"created_at": "2018-11-03T17:32:24Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "8809CCB5-B5A2-4390-A0EA-250DDF1120BE"
+			},
+			{
+				"id": "3fA1bslVGtWST2MrbGoOhKseV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:31:02Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "DlMRaopbvK2quGaoG15xJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "3fA1bslVGtWST2MrbGoOhKseV",
+						"created_at": "2018-11-03T17:30:45Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1500,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "59B99929-D5A2-4EF8-805B-F70267461FD3"
+			},
+			{
+				"id": "Xr6dcwpvwDLU5JpAFG9etr0eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:29:50Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "NasrJq6lWwPddPoolRzqKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "Xr6dcwpvwDLU5JpAFG9etr0eV",
+						"created_at": "2018-11-03T17:29:48Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "BC9FEBA1-DF73-48AA-B33D-7D8FDCC1C5D1"
+			},
+			{
+				"id": "1sHBx69QsbltnMr8UmWkUsjeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:24:10Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "v1lZTcqEN7JY0FxK6GZ0KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "1sHBx69QsbltnMr8UmWkUsjeV",
+						"created_at": "2018-11-03T17:24:09Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "0A21E1BD-A82C-4EC5-8E36-AAC3F72A7125"
+			},
+			{
+				"id": "NOCxfLY5pl3O4LSDApPOBI6eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:22:03Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "d4fnjd8NiK4rFiToOm7lKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "NOCxfLY5pl3O4LSDApPOBI6eV",
+						"created_at": "2018-11-03T17:22:02Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1300,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "33E35857-760B-4470-96F9-24A5BFAB439A"
+			},
+			{
+				"id": "96479r7r26sNS61Z0iE1K50eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:21:57Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "poKObY3Oj5VG8coRJzSvKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "96479r7r26sNS61Z0iE1K50eV",
+						"created_at": "2018-11-03T17:21:56Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "0CE18BC1-B3D2-4000-8837-DAC95F7521D9"
+			},
+			{
+				"id": "bXhUz0h3Y5Djvm5oBnBE7bveV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:20:55Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "BG19odJhhYXPMaF9VpUOLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "bXhUz0h3Y5Djvm5oBnBE7bveV",
+						"created_at": "2018-11-03T17:19:34Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "0475FBCA-96D1-4CD2-AC9C-B010C9D06ED1"
+			},
+			{
+				"id": "ZoG0Eup4h6WDmsjKxprKgJgeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:19:02Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Zwaan8ZNMVekRjOa9WWjLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "ZoG0Eup4h6WDmsjKxprKgJgeV",
+						"created_at": "2018-11-03T17:18:35Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "FB252182-7511-4CAE-A76A-8B241313D7C6"
+			},
+			{
+				"id": "LVUiK80BEOC2v3SFONnVqZieV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:16:02Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "90BxDIYnFQQMac6tKY49KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "LVUiK80BEOC2v3SFONnVqZieV",
+						"created_at": "2018-11-03T17:15:36Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "049F53AA-BAD0-4ACD-845F-2885F5C4BFB7"
+			},
+			{
+				"id": "TDDFx6KIJgrAl2XZveZEoYveV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:07:19Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "DfhflV50zFixOKscbS0PKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "TDDFx6KIJgrAl2XZveZEoYveV",
+						"created_at": "2018-11-03T17:07:08Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "5AC42EA3-5E72-4A61-B25E-2BB3F2484791"
+			},
+			{
+				"id": "3bGbq3z1rTPkeLVQlOToWRueV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:05:21Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "TtwlTGanRz3TgT6auV7pKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "3bGbq3z1rTPkeLVQlOToWRueV",
+						"created_at": "2018-11-03T17:05:07Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 5000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 3200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "5A812995-038B-4B6F-9E62-453C6EBA4A7F"
+			},
+			{
+				"id": "TJUyubqsftj3CIJZee8iiTteV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:04:08Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "9S2eOpVvkpX14lAvScYjLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "TJUyubqsftj3CIJZee8iiTteV",
+						"created_at": "2018-11-03T17:02:23Z",
+						"amount_money": {
+							"amount": 2500,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 4000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1500,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "40F9D185-0A0B-4132-A0D4-10255D59FAD9"
+			},
+			{
+				"id": "Z2hmixqQO9GYOXULDn1oCX9eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:02:25Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Zwk3XIKx6u8EiZMVRVPzJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "Z2hmixqQO9GYOXULDn1oCX9eV",
+						"created_at": "2018-11-03T17:02:24Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "F3F5C431-1505-4966-84B7-6E1AB4535AB9"
+			},
+			{
+				"id": "7dEiWtcAZU5rKtZlTbjsQRoeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T17:02:10Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "bhi8cwgX9rVUOpMbQHxUKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "7dEiWtcAZU5rKtZlTbjsQRoeV",
+						"created_at": "2018-11-03T17:02:08Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "1E57F42E-8FB5-44D7-BF64-37F8B720B34F"
+			},
+			{
+				"id": "PFtJLBTQzCtuSRVBSHBS2Z2eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:58:48Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "PB5UtbGjdIyIyFV0iv3WKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "PFtJLBTQzCtuSRVBSHBS2Z2eV",
+						"created_at": "2018-11-03T16:58:37Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "BBF7A5A1-9BCA-4EB4-A8C1-EE0D7A0ED826"
+			},
+			{
+				"id": "bXTVFdw2dm48UuDBJEUR1DkeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:57:37Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "zll3cngZCdFwx2EAuQVuLzMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "bXTVFdw2dm48UuDBJEUR1DkeV",
+						"created_at": "2018-11-03T16:57:26Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 19,
+							"currency": "USD"
+						},
+						"customer_id": "FFRWSWJPQ13YYQ4HVNX1B5004M",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "3433",
+								"fingerprint": "sq-1-iLX1HwDr7eb-5AovhGixVnrrFQiUTW9ybLOqM_6F9TvBpCgPmONkoAhA6gbeIXW36w"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "529C7618-BC52-4FDB-9C55-575BC0D4F0D1"
+			},
+			{
+				"id": "toJQco9fRzhA9n175VfspkweV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:56:12Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "rh6wVTGmDLc021z0E8DzJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "toJQco9fRzhA9n175VfspkweV",
+						"created_at": "2018-11-03T16:56:10Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2200,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1500,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B1783EDA-927A-4479-867A-E61F16661452"
+			},
+			{
+				"id": "xMysOX0nMaPaiWQwFScQ97keV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:54:12Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "ZEQUDB58NRAR5JwqerciKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "xMysOX0nMaPaiWQwFScQ97keV",
+						"created_at": "2018-11-03T16:53:56Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "965834FC-88FE-4E9C-BE61-3001C60D48AC"
+			},
+			{
+				"id": "5kUybnWkgXnaXM4uTqwGYareV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:49:27Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "BYEgm2SwJHYqIqq6uKYsKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "5kUybnWkgXnaXM4uTqwGYareV",
+						"created_at": "2018-11-03T16:49:16Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "1BEB29FF-4446-4270-AA1B-3201FC9C94BC"
+			},
+			{
+				"id": "bjnKuyA3jsCwntiKuoPhBXueV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:46:41Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "ODeqQZpWXQ8IXox40gLMysMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "bjnKuyA3jsCwntiKuoPhBXueV",
+						"created_at": "2018-11-03T16:46:32Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 36,
+							"currency": "USD"
+						},
+						"customer_id": "84V6E26MJS090ZQEZMPSH9QCRW",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "2272",
+								"fingerprint": "sq-1-7ZmjQgAze75oN14KJ9ZLJKD42S5LOHIMTkLyfUeBdBLhsLQbLlushZvu4MbJ2uMXHQ"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "E73D4FF7-4412-4E91-B4CF-B2EA93D568ED"
+			},
+			{
+				"id": "jf99TzWyiHH4tKuZTNdMkM6eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:34:03Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "YiZbMxuq5FLdhPQtlhwbrsMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "jf99TzWyiHH4tKuZTNdMkM6eV",
+						"created_at": "2018-11-03T16:33:53Z",
+						"amount_money": {
+							"amount": 1200,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 33,
+							"currency": "USD"
+						},
+						"customer_id": "W47C5PRHT128JVQG5AE8X812RC",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "9087",
+								"fingerprint": "sq-1-LldFtBv6Hh7h00caRRP-zk8IisgDd2ugy3LOxMpEV3SR79AlC8hn7Y-BqiQc_kVTww"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "1EDD0069-E9AB-4154-939F-73FEB346D0A5"
+			},
+			{
+				"id": "PRFUiIj1OaiUT1hTuSX8QyyeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:32:51Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "J6zg20L9SL52Oz2LrFhxJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "PRFUiIj1OaiUT1hTuSX8QyyeV",
+						"created_at": "2018-11-03T16:32:31Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "2412B4A8-DACC-4E08-A739-C5777E296B9E"
+			},
+			{
+				"id": "v9dzpLOdUySATQjUhwtmxe7eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:30:38Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "hwkszNcRj1rWaLhSNMUgKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "v9dzpLOdUySATQjUhwtmxe7eV",
+						"created_at": "2018-11-03T16:30:21Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "97A2F277-D3DF-4D33-9A6A-5CAD76587F3B"
+			},
+			{
+				"id": "rrzsMqueBGLIlNVGc0GQLzjeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:29:38Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Xve0fiqDndqZgF5PfwhBLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "rrzsMqueBGLIlNVGc0GQLzjeV",
+						"created_at": "2018-11-03T16:29:24Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "07C34045-1F73-484C-86F7-B9B6133C292D"
+			},
+			{
+				"id": "BgQw4yfn4E9FQh6r5q8YM8zeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:26:28Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "eM8l01FZ92drKdp6IWuGSxMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "BgQw4yfn4E9FQh6r5q8YM8zeV",
+						"created_at": "2018-11-03T16:26:18Z",
+						"amount_money": {
+							"amount": 1400,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 39,
+							"currency": "USD"
+						},
+						"customer_id": "42E9W7PTKS7BAQ34HSPK2NN8A4",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "AMERICAN_EXPRESS",
+								"last_4": "1007",
+								"fingerprint": "sq-1-QcjN8jxuD7x0Bx9YMkBW-CMGojw0goTdPrq3sr7xZftTMWR48x6wopmWxDuM2vc4Tg"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "E98AC956-443E-4CC3-BC07-B30408722B40"
+			},
+			{
+				"id": "NwJsZSpiE3iO3GxV6yGrq3ueV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:25:25Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "jlOuCOJ9s5rNldXUi0MXLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "NwJsZSpiE3iO3GxV6yGrq3ueV",
+						"created_at": "2018-11-03T16:25:17Z",
+						"amount_money": {
+							"amount": 2000,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B4A68BB6-D0D9-4141-A166-207D2E951E4B"
+			},
+			{
+				"id": "hQGVhCbmEDzM3IP1Nizcb0keV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:20:57Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "3XKMDyU5MDDlP8EwRFpmKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "hQGVhCbmEDzM3IP1Nizcb0keV",
+						"created_at": "2018-11-03T16:20:44Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "1D50E39B-79C7-4249-AC73-8FBB510947DB"
+			},
+			{
+				"id": "n3aSN9iwHZYZIHIaagl5ecyeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:05:21Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "nzcwZIGLeFtM3Hta4PBPKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "n3aSN9iwHZYZIHIaagl5ecyeV",
+						"created_at": "2018-11-03T16:05:08Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1300,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "CFA73811-8CA3-49A5-B7E0-06021CF8E632"
+			},
+			{
+				"id": "HdrV1FzDPgAF0PnasqHARNseV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T16:02:53Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "9K0lvkpOPZmgGUxQVWfwJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "HdrV1FzDPgAF0PnasqHARNseV",
+						"created_at": "2018-11-03T16:02:45Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "53CFC15D-BE96-43EF-A1CE-9616D32B27C8"
+			},
+			{
+				"id": "ZeLRsIDdzrllAhml2tnArx4eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T15:55:04Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "FqCP4KS7YtIHUWlE93jeKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "ZeLRsIDdzrllAhml2tnArx4eV",
+						"created_at": "2018-11-03T15:55:03Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "52B0E85C-8CC6-4C02-A7CA-9F2BA2C2C61D"
+			},
+			{
+				"id": "JMsIsBC3XpXGvXIJEcTYnf9eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:56:41Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "fJLVXaAeTOsGgj5s4uAdLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "JMsIsBC3XpXGvXIJEcTYnf9eV",
+						"created_at": "2018-11-03T20:56:33Z",
+						"amount_money": {
+							"amount": 3100,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 3100,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "C4F52736-8F73-4958-B699-F833E2771678"
+			},
+			{
+				"id": "LFONB3N988tLAPGiPaT1hpgeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:52:21Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "lwNV9l0vOSrt4pjPOOMaKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "LFONB3N988tLAPGiPaT1hpgeV",
+						"created_at": "2018-11-03T20:51:59Z",
+						"amount_money": {
+							"amount": 2000,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "480521C0-EDF5-4E27-9A2E-58CF6BB17FC3"
+			},
+			{
+				"id": "X7K1CurYnt3uxlELTxnnllneV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:46:43Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "xW7q0h91qBzXEdhNBiQOLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "X7K1CurYnt3uxlELTxnnllneV",
+						"created_at": "2018-11-03T20:46:41Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1300,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "C292FEE3-88EA-4454-AB6A-5957A982448D"
+			},
+			{
+				"id": "VIdFxdrlU2RBKyTK19kNUogeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:38:47Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "XB0KUhCKLxYTZJ7MTxaHOwMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "VIdFxdrlU2RBKyTK19kNUogeV",
+						"created_at": "2018-11-03T20:38:34Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 50,
+							"currency": "USD"
+						},
+						"customer_id": "281NJFS4YN5KWJ8Y60F3XFH3F8",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "1361",
+								"fingerprint": "sq-1-Po8MQTTL7qCDaTcR452jI3eAA1cknE1s6Lninnh99V4USL4sDewaKjvKGUBD3hWmNw"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "26213DB2-BA19-4D37-90B9-A59D7B0BC55A"
+			},
+			{
+				"id": "xsKEQRxIe1SpHmHYCk8WtCleV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:33:32Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "D7jrGZJamEjY7EXKyztHLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "xsKEQRxIe1SpHmHYCk8WtCleV",
+						"created_at": "2018-11-03T20:33:00Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "0E91D8CD-299E-46EC-BFE7-78908E852385"
+			},
+			{
+				"id": "Nc9lAd2npGbkkKmQpFwQgTleV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:24:22Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "MmhxIofyQqOQevJoc8qcIxMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "Nc9lAd2npGbkkKmQpFwQgTleV",
+						"created_at": "2018-11-03T20:24:11Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 36,
+							"currency": "USD"
+						},
+						"customer_id": "MBM188FPCD65YRNTJSRBC9GVSC",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "2453",
+								"fingerprint": "sq-1-i-jONhxSW8WsZ6SpxvFiog2iP2zxoSvgWivZ04Ihr6qVOUK0ly0uUN6688zH57_S1w"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "4D07CE8D-F66F-4A9A-BC98-C54006B275D9"
+			},
+			{
+				"id": "b7JPRLD54jSfA6tvMxf3Ek4eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:20:45Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "bnhKk0uOBYhqZ31KkfCBLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "b7JPRLD54jSfA6tvMxf3Ek4eV",
+						"created_at": "2018-11-03T20:20:27Z",
+						"amount_money": {
+							"amount": 3600,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 5000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1400,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "F5316870-FDF0-4F22-B7B4-30347B161413"
+			},
+			{
+				"id": "xOjg6oLpdnUUN5Z8PcSdniieV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:15:05Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "nVdULayAuMG6lU3VlFcbKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "xOjg6oLpdnUUN5Z8PcSdniieV",
+						"created_at": "2018-11-03T20:14:54Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "A30F04A2-B30D-418C-B348-766CD9E54D30"
+			},
+			{
+				"id": "JqHiUww9tRqpyxVSJ66VHq1eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:13:03Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "QGkBgOlXVCQ0Vy4CMGwD6sMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "JqHiUww9tRqpyxVSJ66VHq1eV",
+						"created_at": "2018-11-03T20:12:49Z",
+						"amount_money": {
+							"amount": 800,
+							"currency": "USD"
+						},
+						"tip_money": {
+							"amount": 100,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 22,
+							"currency": "USD"
+						},
+						"customer_id": "XMEPC8WJZD79WX11K8A8NFAAX4",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "4240",
+								"fingerprint": "sq-1-7KpTtH6dZqga0QyXlZzaSXQXsJBmTGijn3xSVAkXd0ujvuzQIFcnZzzdxTb43g8weA"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "89EEC80C-74EE-478E-A088-F8C340FBDF5D"
+			},
+			{
+				"id": "PplYdFkeYYIy5BUOpZg57t2eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:12:43Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "N81PndZgQ6MtX5sENGsOKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "PplYdFkeYYIy5BUOpZg57t2eV",
+						"created_at": "2018-11-03T20:11:46Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "6F98F311-DC1C-40FF-8255-6262B6208970"
+			},
+			{
+				"id": "lkrz9kb8MBfimfmJSwgsAr1eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:11:22Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "VA9lQBHtEzBZS2d3vjGbKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "lkrz9kb8MBfimfmJSwgsAr1eV",
+						"created_at": "2018-11-03T20:11:20Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "BDF2CA64-42DE-4883-A9E6-5BB9E0D776EA"
+			},
+			{
+				"id": "l05qZrmaOI0caqgOA6Nvk89eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:04:57Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "BEqijQQvBfho5JLiZe0wLxMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "l05qZrmaOI0caqgOA6Nvk89eV",
+						"created_at": "2018-11-03T20:04:46Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 50,
+							"currency": "USD"
+						},
+						"customer_id": "D5324CNW4D7V4XKDM5Q3AT0SH8",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "1368",
+								"fingerprint": "sq-1-2PyTcxmehdaPbNAbQ8BpTrKZQuge0ypdB8ajdIdaT33K1aEh5QHO1J-aILWhxIvEXg"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "F96A3EE9-765D-4889-B10B-01E23882E743"
+			},
+			{
+				"id": "fH6tr671k5bg3Hccz3klz37eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T20:03:37Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "r3yBpuBOTI6NiEZ34sMMIxMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "fH6tr671k5bg3Hccz3klz37eV",
+						"created_at": "2018-11-03T20:03:19Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 36,
+							"currency": "USD"
+						},
+						"customer_id": "WZNT5YAXWD5ZCV2D6HSZ1N4ERW",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "7700",
+								"fingerprint": "sq-1-BzW2TXzPO1hJfYaiEiFw8Ia6kaEzkBDTPM1rj7eKQyMPwCI0ojmUcnaN65h-M86nIw"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "525E726E-6FFD-4AE2-B184-D6BCA7E05294"
+			},
+			{
+				"id": "7lW1g34Sr0buqHyw5ntpwYveV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:59:50Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "JwcL25edAvwKlv0wavGMLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "7lW1g34Sr0buqHyw5ntpwYveV",
+						"created_at": "2018-11-03T19:59:36Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 700,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "BBFB1CFE-609C-44C4-A89A-03142BD77FE0"
+			},
+			{
+				"id": "fZjl9xf0xRzN68AIo08WxyAfV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:58:29Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Ngrd9H0xvVETZJ7uZ3LAKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "fZjl9xf0xRzN68AIo08WxyAfV",
+						"created_at": "2018-11-03T19:58:17Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2300,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1000,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B44F0289-42B5-4523-8E4C-54E374A22D90"
+			},
+			{
+				"id": "d81n6bsdJkxaH1K88rMQggweV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:52:02Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "XvuktveldoY0IM5gtcl3KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "d81n6bsdJkxaH1K88rMQggweV",
+						"created_at": "2018-11-03T19:51:53Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "BB1B2C2D-9FD3-4700-8254-B61F12134FC9"
+			},
+			{
+				"id": "frYJIZiNfuAllZJaww1Zs1qeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:46:44Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "z1UF9MmQGjkn9CwpBkyiKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "frYJIZiNfuAllZJaww1Zs1qeV",
+						"created_at": "2018-11-03T19:46:33Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1300,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "FEF7FC2E-63B7-490A-9873-52691F0EB237"
+			},
+			{
+				"id": "5GHFa8ndBauhhTrllYP48f1eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:45:05Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "7xaC5UyiVrIwGXegu1cZKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "5GHFa8ndBauhhTrllYP48f1eV",
+						"created_at": "2018-11-03T19:43:49Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "D1458A80-B8D6-47F3-A44D-7D3720529B2C"
+			},
+			{
+				"id": "PjqU72IZTIllXliZidGjny2eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:43:12Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "1gpzan7DHYiQTMZ7AYbHLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "PjqU72IZTIllXliZidGjny2eV",
+						"created_at": "2018-11-03T19:43:05Z",
+						"amount_money": {
+							"amount": 1400,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1400,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "F2F39814-CA57-413D-9BD9-A6B923953C17"
+			},
+			{
+				"id": "FqsWlEgSN5Cey0IIBat9OgweV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:36:15Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "f9jsVBDML198XvsRzy3fLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "FqsWlEgSN5Cey0IIBat9OgweV",
+						"created_at": "2018-11-03T19:36:14Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "C418F292-D54E-4AB5-BBC0-884C77D71767"
+			},
+			{
+				"id": "fTATquMcf3nTjYhxlCapoOjeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:35:02Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "v7CypG5eSyny0vMYcHExJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "fTATquMcf3nTjYhxlCapoOjeV",
+						"created_at": "2018-11-03T19:34:43Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "C38FC9E2-3FBC-42E3-9FA7-00007A353E88"
+			},
+			{
+				"id": "vHgw4JxjsL9KC7EakucOGmjeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:33:36Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "N2r8wU4qMTZgYwEwqNSXwzMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "vHgw4JxjsL9KC7EakucOGmjeV",
+						"created_at": "2018-11-03T19:33:19Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 19,
+							"currency": "USD"
+						},
+						"customer_id": "4CY51YNNZ97E6MDS86GW5TK428",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "6927",
+								"fingerprint": "sq-1-vdvkAECFs5qT4U_DzZjlM3JWQ89RhXHYi6FxE8BOKR9CdempXSo-36JMoj_n0DCuhQ"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "86FC47E0-E248-46B8-916D-1A25D54F28A3"
+			},
+			{
+				"id": "h6LlDhdVKYBVjnD378zbPGqeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:31:46Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "9WOdUP3qyKfmzKMA0XmQKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "h6LlDhdVKYBVjnD378zbPGqeV",
+						"created_at": "2018-11-03T19:31:32Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B4C6397A-71DB-4908-A774-47E43DD8A7BC"
+			},
+			{
+				"id": "X7qZi1vDjCbnotgme25ssIieV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:30:33Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "xq5cQuKQr11uTIpsAwiDqzMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "X7qZi1vDjCbnotgme25ssIieV",
+						"created_at": "2018-11-03T19:30:25Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 40,
+							"currency": "USD"
+						},
+						"customer_id": "ZSXA2VV76D57EKBAAY4TT7VSBW",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "6945",
+								"fingerprint": "sq-1-dk-Prj5AHCfqCJGUNkvbkhlaY09qs_1C3z3oavxl2ELgjl380NNe_EG0dT2YwOZK5Q"
+							},
+							"entry_method": "KEYED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "4407DD0B-C151-4B8A-984A-3C9B58B2C597"
+			},
+			{
+				"id": "7tUuEGGKgQYFTm0U4E7WFXgeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:28:12Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "l2cnVEPK5vJGV9VsjprNKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "7tUuEGGKgQYFTm0U4E7WFXgeV",
+						"created_at": "2018-11-03T19:27:58Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 700,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "36DA5DE9-28AF-474C-95CE-6B73CB5CBD55"
+			},
+			{
+				"id": "v3WVvdmAf1PmLZZWbAL71o5eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:27:33Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Bsyua7Hurff4LJGFkPrZLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "v3WVvdmAf1PmLZZWbAL71o5eV",
+						"created_at": "2018-11-03T19:27:32Z",
+						"amount_money": {
+							"amount": 2500,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2500,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "ACEA28B3-026C-4B08-BC3A-DEF2D6784E89"
+			},
+			{
+				"id": "1kZMPbEHVam4FBdRfbEIHjmeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:26:44Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "l0HTG9KTCZuCYqTNL8xlKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "1kZMPbEHVam4FBdRfbEIHjmeV",
+						"created_at": "2018-11-03T19:26:31Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 200,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B0D78AB6-1CD7-4D4E-9E39-E82EFAE79171"
+			},
+			{
+				"id": "f5PXRsc0g4quPsAUKz1QcqreV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:24:09Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "dEt1m2XNhzlhvMcP59P7JQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "f5PXRsc0g4quPsAUKz1QcqreV",
+						"created_at": "2018-11-03T19:24:06Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "A7AF47FC-B354-4E92-B40B-691B0A7CE5CF"
+			},
+			{
+				"id": "zdywY67fiyOyf5LdoOTmJ02eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:18:01Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Lj7gD71LYtfuvUyIDi9DLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "zdywY67fiyOyf5LdoOTmJ02eV",
+						"created_at": "2018-11-03T19:17:40Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "662E3666-5470-4078-8830-0084BA50AE1E"
+			},
+			{
+				"id": "HRttLvpdST8Np5MugkK6FlpeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:17:09Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "ha90qZ9hN6TiVCubBv1fKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "HRttLvpdST8Np5MugkK6FlpeV",
+						"created_at": "2018-11-03T19:16:55Z",
+						"amount_money": {
+							"amount": 2000,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "C5553BE0-114B-437C-9E55-28D26F4D000C"
+			},
+			{
+				"id": "5qXQ6BhINGnagcdpE8qsux0eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:10:09Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "NKQRXNMyJCBdsCcvGCdOKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "5qXQ6BhINGnagcdpE8qsux0eV",
+						"created_at": "2018-11-03T19:10:06Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "E2B1D706-E2AC-4E9D-B3D6-9C412ADF5BB0"
+			},
+			{
+				"id": "npPkNmn8eixQeci5R8pF7Y2eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:04:08Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "bFO9ArF5On47rFBUhVOfLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "npPkNmn8eixQeci5R8pF7Y2eV",
+						"created_at": "2018-11-03T19:02:55Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "54591B50-DD3C-42FA-9DA9-B18815465EEB"
+			},
+			{
+				"id": "xIImp3h07IodHyEOXKXFC3reV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:02:50Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "r3JCVvSBqUjA0qDQfTbsKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "xIImp3h07IodHyEOXKXFC3reV",
+						"created_at": "2018-11-03T19:01:06Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "493E28DC-7E3C-4ED1-A3A3-1B87828AC913"
+			},
+			{
+				"id": "DVUfflzh9eoJXuIE2wD96MgeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T19:01:38Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "pEKbBM8k7ZktaqnRgjIJKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "DVUfflzh9eoJXuIE2wD96MgeV",
+						"created_at": "2018-11-03T19:01:25Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "A9353C66-26C2-4333-B8D9-F77A87D7DEF8"
+			},
+			{
+				"id": "jdmWxfj2sopvrDfYC0pUyrieV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:57:47Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "H9rL0ZHUhnSYjzmC4SnTLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "jdmWxfj2sopvrDfYC0pUyrieV",
+						"created_at": "2018-11-03T18:57:35Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "53B4B92E-E7BF-41EF-828E-A12B1B5FCDFB"
+			},
+			{
+				"id": "nFPHsT5uNcxjS8nCre0r5Z9eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:55:42Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "DZWdOlrhn8rWMCeFOyryJQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "nFPHsT5uNcxjS8nCre0r5Z9eV",
+						"created_at": "2018-11-03T18:52:58Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "8AA5FBAD-C9E4-4320-9B52-615D9D8A1C98"
+			},
+			{
+				"id": "ZaxLXeqqGwv6Jtf0Dmq54a1eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:48:26Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "L7ZrKmv60kKEebxirdbiKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "ZaxLXeqqGwv6Jtf0Dmq54a1eV",
+						"created_at": "2018-11-03T18:47:37Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "29423F30-46A5-4E63-8E27-5801DAFE10D0"
+			},
+			{
+				"id": "ZoaqukPofToPT5G0YrtSKHheV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:48:17Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "poCivYBcnLLxrRce26C3KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "ZoaqukPofToPT5G0YrtSKHheV",
+						"created_at": "2018-11-03T18:47:48Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "10B264D3-A9CE-4AAE-8692-1975A0057824"
+			},
+			{
+				"id": "tk1TgL9icwkH03lRdTX2Mb4eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:47:17Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "NobblDx7mPsGyx4V1sIxKQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "tk1TgL9icwkH03lRdTX2Mb4eV",
+						"created_at": "2018-11-03T18:47:06Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2200,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 1500,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "D71D4AF8-6B68-465A-8177-D7E5FDDF5008"
+			},
+			{
+				"id": "Hlr5IHgZtiDPnSsjSlhNxtueV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:44:29Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "rPf7N6mbcbNZ4mvR6i26KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "Hlr5IHgZtiDPnSsjSlhNxtueV",
+						"created_at": "2018-11-03T18:43:34Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 1000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 300,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "D6E9F6F4-3383-43A6-94B7-7564E2392BCC"
+			},
+			{
+				"id": "paTQAmUNvOfvHAApfW51znjeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:43:03Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "dS4l7X8KoRhLpEHCfEx9JQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "paTQAmUNvOfvHAApfW51znjeV",
+						"created_at": "2018-11-03T18:42:49Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 700,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "6DE2F21C-9994-4D48-A1F1-69E6FB5F0A79"
+			},
+			{
+				"id": "7LNRLsRMovKOazytp74kPvyeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:41:34Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "H4iGGvMoV8Ck9Txz9LhQxyMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "7LNRLsRMovKOazytp74kPvyeV",
+						"created_at": "2018-11-03T18:41:21Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 19,
+							"currency": "USD"
+						},
+						"customer_id": "GDN2VJ04SH3G6SJJDXM2SQEFV4",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "0933",
+								"fingerprint": "sq-1-hfgO7Yl_jazk00SUeiIg0r5r3IqTfK_AkVUSLiAJb8EzjPyYPuY3KxRa1xpk9AJPfA"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "97915723-32BC-4517-A3B6-60DA601B2FE8"
+			},
+			{
+				"id": "94XRs3Ou0bImKdW2dNkK7L1eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:39:46Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "O1H90Xn2Ql1DAGQPiz8ywvMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "94XRs3Ou0bImKdW2dNkK7L1eV",
+						"created_at": "2018-11-03T18:39:32Z",
+						"amount_money": {
+							"amount": 8625,
+							"currency": "USD"
+						},
+						"tip_money": {
+							"amount": 1125,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 237,
+							"currency": "USD"
+						},
+						"customer_id": "3WFDE8RVZ57VWQDM8CAV1PKQVM",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "AMERICAN_EXPRESS",
+								"last_4": "2017",
+								"fingerprint": "sq-1-w98N-6f2NJKYOemBzXEFZt2KDSS-HL54-9CwTIUorEI6RqgpLGPeeXnHoVBf7OYtFg"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "BA098B42-0D7A-4BB9-AB68-0D70240BA43C"
+			},
+			{
+				"id": "PDWMUyNu0tXDrxoWPXdqODweV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:35:18Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "n5d1EY29hahe80ZRjVt5KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "PDWMUyNu0tXDrxoWPXdqODweV",
+						"created_at": "2018-11-03T18:32:59Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "EFF0BD39-E92E-4C73-85D5-D6216B9F402A"
+			},
+			{
+				"id": "rRQJc6h2JCWu8xEmnT8gylkeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:32:06Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "dOg4AWcZwDSiNhyHapjcLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "rRQJc6h2JCWu8xEmnT8gylkeV",
+						"created_at": "2018-11-03T18:31:57Z",
+						"amount_money": {
+							"amount": 2200,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2200,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "A729EC42-4683-4A98-B4FC-18C7D7631906"
+			},
+			{
+				"id": "1eKuzBRF9sMu5fyIgIKXH4seV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:29:37Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "3TGvOI1j4VlIwcRArdnUHzMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "1eKuzBRF9sMu5fyIgIKXH4seV",
+						"created_at": "2018-11-03T18:29:25Z",
+						"amount_money": {
+							"amount": 1800,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 50,
+							"currency": "USD"
+						},
+						"customer_id": "JTARQN1NS15NRPEP5ZKDMMKQ8M",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "8572",
+								"fingerprint": "sq-1-FFOZl-tZ7pdXHdXS9w8FURGZr6pLHCLW9PcMRCChKxzXIjde7R6cnXVars5aWqRIYg"
+							},
+							"entry_method": "EMV"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "0CB1EF0D-C841-4087-BC2A-E9D5DD026760"
+			},
+			{
+				"id": "54OSbv7GxRtZEqZUL8nk0j1eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:27:02Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "JGBUYFjXe2zsBHiNSI31JQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "54OSbv7GxRtZEqZUL8nk0j1eV",
+						"created_at": "2018-11-03T18:27:00Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 700,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "5CFD1699-D856-4950-B78C-9C29766AB8E4"
+			},
+			{
+				"id": "hOz68w59lgbSGZwYPqLD4e8eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:21:59Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "ZKV7G9NITajvYtAqbZ44KQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "hOz68w59lgbSGZwYPqLD4e8eV",
+						"created_at": "2018-11-03T18:21:44Z",
+						"amount_money": {
+							"amount": 1300,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 2000,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 700,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "561FDBA6-6925-491A-931B-0CAB2FECA98C"
+			},
+			{
+				"id": "3pZViIIM32VqSxdoAu6xFIyeV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:21:13Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "cSPHjze9dIW0qVhbWimestMF",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "3pZViIIM32VqSxdoAu6xFIyeV",
+						"created_at": "2018-11-03T18:21:05Z",
+						"amount_money": {
+							"amount": 700,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 19,
+							"currency": "USD"
+						},
+						"customer_id": "JXCWYYWJPN6D6TNQQ5K4ZY4QXM",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "VISA",
+								"last_4": "1232",
+								"fingerprint": "sq-1-ln1TtAiI8XnendDQtWpAiSfmJIiZ-6ihcL1uv1GfuXuwQNw8GZPY6KfzqZFCSdZTHw"
+							},
+							"entry_method": "SWIPED"
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "ABA08811-A341-45B3-A8B4-8449493FB720"
+			},
+			{
+				"id": "H7KJ1cYUF8hfmNvXjJ6OWk4eV",
+				"location_id": "M53KQT35YKE5C",
+				"created_at": "2018-11-03T18:19:54Z",
+				"tenders": [
+					{
+						"type": "CASH",
+						"id": "Z6FtthAjQW80a0udVNkmLQB",
+						"location_id": "M53KQT35YKE5C",
+						"transaction_id": "H7KJ1cYUF8hfmNvXjJ6OWk4eV",
+						"created_at": "2018-11-03T18:19:47Z",
+						"amount_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 0,
+							"currency": "USD"
+						},
+						"cash_details": {
+							"buyer_tendered_money": {
+								"amount": 0,
+								"currency": "USD"
+							},
+							"change_back_money": {
+								"amount": 0,
+								"currency": "USD"
+							}
+						}
+					}
+				],
+				"product": "REGISTER",
+				"client_id": "B7EBEB07-003E-43C8-806F-08C1843C93E5"
+			}
+		]
+	},
+	{
+		"transactions": [
+			{
+				"id": "gndVcNAUD2rvetVDceL4LeLYuaB",
+				"location_id": "14E8S7P16JQDM",
+				"created_at": "2018-11-03T21:28:31Z",
+				"tenders": [
+					{
+						"type": "CARD",
+						"id": "AbQTEwPuQ9X0GTLOsT0aTxMF",
+						"location_id": "14E8S7P16JQDM",
+						"transaction_id": "gndVcNAUD2rvetVDceL4LeLYuaB",
+						"created_at": "2018-11-03T21:28:30Z",
+						"note": "Online Order #435",
+						"amount_money": {
+							"amount": 1699,
+							"currency": "USD"
+						},
+						"processing_fee_money": {
+							"amount": 79,
+							"currency": "USD"
+						},
+						"customer_id": "4J6ADYRYND5KTXX5JAPKW2F5FG",
+						"card_details": {
+							"status": "CAPTURED",
+							"card": {
+								"card_brand": "MASTERCARD",
+								"last_4": "8123",
+								"fingerprint": "sq-1-GqpWzT5hhGOsAilP1l3DEO3rSoVXtlRdm3-S00LGgcFDyKV9SX1uMPtfnUXvno2JCA"
+							},
+							"entry_method": "KEYED"
+						}
+					}
+				],
+				"reference_id": "435",
+				"product": "EXTERNAL_API",
+				"order_id": "gndVcNAUD2rvetVDceL4LeLYuaB"
+			}
+		]
+	}
+]
