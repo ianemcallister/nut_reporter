@@ -254,24 +254,65 @@ function retreive_tx_payment() {};
         ...
 *   ]
 */
-function list_items() {
+function list_items(locationId, opts, cursor) {
     //  DEFINE LOCAL VARIABLES
     var self = this;
     var apiInstance = new SquareConnect.V1ItemsApi();
+    if(opts == undefined) opts = {};
+    opts['batchToken'] = cursor;    // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
+    console.log(locationId);
+    console.log(opts);
+    console.log(cursor);
+    
     //  RETURN ASYNC WORK
     return new Promise(function(resolve,reject) {
 
-        resolve('This is a list item');
+        //  HIT THE SQUARE SERVER
+        apiInstance.listItems(locationId, opts).then(function(data) {
+
+            //  CHECK FOR A CURSOR
+            if(data.cursor != undefined) {
+
+                //  IF A CURSOR WAS FOUND REVISIT THE LIST
+                list_items(locationId, opts, data.cursor)
+                .then(function success(s) {
+
+                    //  ITERATE THROUGH THE OLD DATA AND ADD IT TO THE NEWLY RETURNED DATA
+                    data.forEach(function(item) {
+                        s.push(item);
+                    });
+
+                    //  FILLFILL THE PROMISE
+                    reslve(s);
+
+                }).catch(function error(e) {
+                    reject(e);
+                });
+
+            } else {
+
+                //  IF NO CURSOR WAS FOUND WE'VE REACHED THE BOTTOM OF THE LIST
+                resolve(data);
+            };
+
+        }, function(error) {
+            //console.error(error);
+            reject(error);
+        }); 
 
     });
 
 };
 
 /*
-*   TEST
+*   MULTIPLE LOCATIONS
 *
-*   This is a simple test to make sure everything is running properly
+*   This function allows any method to be run across multiple locations, retrning the results in an array.
+*
+*   @param: fnPath - string     This string identifes where to find the function required within the square module
+*   @param: options - object    This object contains all the options required to properly execute the desired function
+*   @return: ARRAY              Returns an array of results from the desired function
 */
 function multipleLocations(fnPath, options) {
     //  DEFINE LOCAL VARIABLES
@@ -291,7 +332,7 @@ function multipleLocations(fnPath, options) {
 
     //  ITERATE THROUGH ALL LOCATIONS
     self.locations.forEach(function(location) {
-        resultsArray.push(exFn(options))
+        resultsArray.push(exFn(location, options))
     });
 
     return resultsArray;
