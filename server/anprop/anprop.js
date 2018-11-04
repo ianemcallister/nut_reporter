@@ -9,6 +9,7 @@
 
 //DEFINE DEPENDENCIES
 var moment = require('moment-timezone');
+var square = require('../square/square')
 
 //DEFINE THE MODULE
 var ahnuts = {
@@ -128,12 +129,26 @@ function test() {
 function dailyShiftReporter(salesDate, previousDay) {
     //  DEFINE LOCAL VARIABLES
     var time = _timeBookender(salesDate, previousDay);
+    var sqTxs = ""; //a promise for all the square transactions
+    var sqrItems = ''; //a promise for all square items
+    var sqrMods = ''; //a promise for all square modifers
+    var wiwUsers = ""; //a promise for all the wiw users
+    var wiwShifts = ''; //a promise for all the wiw shifts for the given day
+    var wiwSites = ''; //a promise for all the wiw sites
+
+    let rawData = [sqTxs, sqrItems, sqrMods, wiwUsers, wiwShifts, wiwSites];
 
     //  RETURN ASYNC WORK
     return new Promise(function(resolve, reject) {
 
-        //console.log(startTime.getTimezoneOffset());
-        console.log(time);
+        square.test();
+
+        Promise.all(rawData)
+        .then(function success(s) {
+            resolve(s);
+        }).catch(function error(e) {
+            reject(e);
+        });
 
     });
 

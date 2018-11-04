@@ -22,6 +22,7 @@
     "express": "^4.16.4",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
+    "square-connect": "^2.20180918.1",
     "wheniwork": "^2.0.3"
   }
 }
