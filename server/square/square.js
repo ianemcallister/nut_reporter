@@ -371,21 +371,29 @@ function multipleLocations(fnPath, options) {
     var fnPathSteps = fnPath.split("/");
     var exFn = self;
 
-    //console.log(fnPathSteps);
-
     //  ITERATE OVER FUNCTION PATH STEPS
     fnPathSteps.forEach(function(step) {
         exFn = exFn[step];
     });
-
-    //console.log(exFn);
 
     //  ITERATE THROUGH ALL LOCATIONS
     self.locations.forEach(function(location) {
         resultsArray.push(exFn(location, options))
     });
 
-    return resultsArray;
+    //  RETURN ASYNC WORK
+    return new Promise(function(resolve, reject) {
+
+        // WAIT UNTIL THE PROMISSES HAVE ALL BEEN FULLFILLED
+        Promise.all(resultsArray)
+        .then(function success(s) {
+            resolve(s);
+        }).catch(function error(e) {
+            reject(e);
+        });
+
+    });
+
 };
 
 /*

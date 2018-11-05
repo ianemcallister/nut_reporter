@@ -8,8 +8,9 @@
 //console.log('in the anpop.js file');
 
 //DEFINE DEPENDENCIES
-var moment = require('moment-timezone');
-var square = require('../square/square')
+var moment  = require('moment-timezone');
+var square  = require('../square/square');
+var wiw     = require('../wheniwork/wiwapp');
 
 //DEFINE THE MODULE
 var ahnuts = {
@@ -129,19 +130,19 @@ function test() {
 function dailyShiftReporter(salesDate, previousDay) {
     //  DEFINE LOCAL VARIABLES
     var time = _timeBookender(salesDate, previousDay);
-    var sqTxs = ""; //a promise for all the square transactions
+    var sqTxs = square.multipleLocations('V1/transactions/payments_list', { beginTime: time.start, endTime: time.end }); //a promise for all the square transactions
     var sqrItems = ''; //a promise for all square items
     var sqrMods = ''; //a promise for all square modifers
-    var wiwUsers = ""; //a promise for all the wiw users
-    var wiwShifts = ''; //a promise for all the wiw shifts for the given day
-    var wiwSites = ''; //a promise for all the wiw sites
+    var wiwUsers = wiw.users.list(); //a promise for all the wiw users
+    var wiwShifts = wiw.shifts.list({ start: time.start, end: time.end }); //a promise for all the wiw shifts for the given day
+    var wiwSites = wiw.sites.list(); //a promise for all the wiw sites
 
     let rawData = [sqTxs, sqrItems, sqrMods, wiwUsers, wiwShifts, wiwSites];
 
     //  RETURN ASYNC WORK
     return new Promise(function(resolve, reject) {
 
-        square.test();
+        //square.test();
 
         Promise.all(rawData)
         .then(function success(s) {
