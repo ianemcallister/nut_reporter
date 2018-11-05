@@ -8,9 +8,10 @@
 //console.log('in the anpop.js file');
 
 //DEFINE DEPENDENCIES
-var moment  = require('moment-timezone');
-var square  = require('../square/square');
-var wiw     = require('../wheniwork/wiwapp');
+var moment      = require('moment-timezone');
+var square      = require('../square/square');
+var wiw         = require('../wheniwork/wiwapp');
+var collections = require('./models/collections');
 
 //DEFINE THE MODULE
 var ahnuts = {
@@ -130,23 +131,37 @@ function test() {
 function dailyShiftReporter(salesDate, previousDay) {
     //  DEFINE LOCAL VARIABLES
     var time = _timeBookender(salesDate, previousDay);
-    var sqTxs = square.multipleLocations('V1/transactions/payments_list', { beginTime: time.start, endTime: time.end }); //a promise for all the square transactions
+    var sqTxs = square.multipleLocations('V1/transactions/list_payments', { beginTime: time.start, endTime: time.end }); //a promise for all the square transactions
     var sqrItems = ''; //a promise for all square items
     var sqrMods = ''; //a promise for all square modifers
     var wiwUsers = wiw.users.list(); //a promise for all the wiw users
     var wiwShifts = wiw.shifts.list({ start: time.start, end: time.end }); //a promise for all the wiw shifts for the given day
     var wiwSites = wiw.sites.list(); //a promise for all the wiw sites
 
-    let rawData = [sqTxs, sqrItems, sqrMods, wiwUsers, wiwShifts, wiwSites];
+    var rawPromises = [sqTxs, sqrItems, sqrMods, wiwUsers, wiwShifts, wiwSites];
 
     //  RETURN ASYNC WORK
     return new Promise(function(resolve, reject) {
 
-        //square.test();
+        //  WAIT UNTIL ALL PROMISES HAVE RESOLVED
+        //  1 & 2 DOWNLOADING ALL THE REQUIRED DATA
+        Promise.all(rawPromises)
+        .then(function success(allRawData) {
 
-        Promise.all(rawData)
-        .then(function success(s) {
-            resolve(s);
+            //  3.  BUILD SALES DAYS LIST
+            var salesDaysList = collections.assignTxsToCMEs(allRawData);
+
+            //  4.  BUILD EMPLOYEE EARNINGS REPORT
+
+            //  5.  EMAIL EARNINGS REPORTS
+
+            //  6.  CREATE QBO CUSTOMER INVOICES
+            //  7.  CREATE QBO EMPLOYEE INVOICES
+            //  8.  CREATE QBO PAYMENTS RECEIVED
+            //  9.  EMAIL MFG REPORT
+            
+            resolve(allRawData);
+
         }).catch(function error(e) {
             reject(e);
         });

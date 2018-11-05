@@ -5,8 +5,8 @@
 */
 
 //DEFINE DEPENDENCIES
-let WIW = require('wheniwork').WIW;
-let wiw = init(); 
+var WIW = require('wheniwork').WIW;
+var wiw = init(); 
 
 //DEFINE 
 

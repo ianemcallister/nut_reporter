@@ -10,7 +10,7 @@
 //  DEFINE DEPENDENCIES
 
 //  DEFINE THE MODULE
-let cmes = {
+var cmes = {
     customer_name: "",
     shifts: [],
     tranactions: [],
