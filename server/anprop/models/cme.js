@@ -10,21 +10,30 @@
 //  DEFINE DEPENDENCIES
 
 //  DEFINE THE MODULE
-var cmes = {
-    customer_name: "",
-    shifts: [],
-    tranactions: [],
-    financials: {
+var cme = function(customer_name) {
+    this.isUnknown = false;
+    this.customer_id = 0;
+    this.customer_name = customer_name;
+    this.shifts = [];
+    this.transactions = [];
+    this.financials = {
         gross_sales: 0,
         net_sales: 0,
         total_tips: 0,
         total_discounts: 0,
         total_refunds: 0,
         sales_hrs: {},
-        average_hourly_sales: 0
+        average_hourly_sales: 0       
     },
-    mfg: {}
+    this.mfg = {}
+    this.test = function() { console.log("cme test"); }
 };
 
+//  ADD SHIFTS FUNCTION
+cme.prototype.addShift = function(shiftObject) { this.shifts.push(shiftObject); }
+
+//  ADD TRANSACTIONS
+cme.prototype.addTransaction = function(txObject) { this.transactions.push(txObject); }
+
 //  EXPORT THE MODULE
-module.exports = cmes;
+module.exports = new cme;
