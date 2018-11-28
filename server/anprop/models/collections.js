@@ -10,12 +10,14 @@
 
 //  DEFINE DEPENDENCIES
 var cme     = require('./cme');
+var moment  = require('moment');
 
 //  DEFINE THE MODULE
 var collections = {
     assignTxsToCMEs: assignTxsToCMEs,
     initializeCMEs: initializeCMEs,
     sqIdsHasher: sqIdsHasher,
+    shiftsHasher:shiftsHasher,
     findCustomer: findCustomer
 };
 
@@ -30,88 +32,15 @@ function assignTxsToCMEs(allRawData) {
     var sqrItems    = allRawData[1];
     var sqrMods     = allRawData[2];
     var wiwUsers    = sqIdsHasher(allRawData[3]);
-    var wiwShifts   = allRawData[4];
+    var wiwShifts   = shiftsHasher(allRawData[4]);
     var wiwSites    = sitesHasher(allRawData[5]);
-    var cmes        = initializeCMEs(wiwShifts);
-
-    //  ITERATE OVER LOCATIONS
-    sqTxs.forEach(function(location) {
-
-        //  ITERATE OVER TRANSACTIONS
-        location.forEach(function(tx) {
-
-            //  DEFINE LOCAL VARIABLES
-            var sqEmpId = '';
-
-           //   ITERATE OVER TENDERS TO FIND EMPLOYEE ID
-           tx.tender.forEach(function(aTender) {
-            sqEmpId = aTender.employee_id
-           });
-
-
-           var wiwEmpId = wiwUsers[sqEmpId];     //   IDENTIFY WIW EMPLOYEE ID
-           
-           //   CHECK FOR WIW EMPLOYEE ID
-           if(wiwEmpId != undefined) {
-               //   IF THERE IS A VALID WIW EMPLOYEE ID
-                var foundCME = false
-
-               var customer = findCustomer(tx.created_at, wiwEmpId, wiwShifts, wiwSites);
-               console.log('found a good employee id:', customer);
-
-               //iterate over cmes
-               cmes.forEach(function(aCME) {
-                    if(aCME.customer_id == customer.id) {
-                        aCME.transactions.push(tx);
-                        aCME.financials.gross_sales+= tx.gross_sales_money.amount;
-                        aCME.financials.net_sales+=tx.net_total_money.amount;
-                        aCME.financials.total_tips+=tx.tip_money.amount;
-                        aCME.financials.total_discounts+=tx.discount_money.amount;
-                        aCME.financials.total_refunds+=tx.refunded_money.amount;
-                        foundCME = true;
-                    }
-               });
-
-               if(!foundCME) { 
-                   var newCME = Object.create(cme);
-                   newCME.customer_id = customer.id;
-                   newCME.customer_name = customer.name;
-                   newCME.transactions = [];
-                   newCME.transactions.push(tx);
-                   newCME.financials = {
-                    gross_sales: 0,
-                    net_sales: 0,
-                    total_tips: 0,
-                    total_discounts: 0,
-                    total_refunds: 0,
-                    sales_hrs: {},
-                    average_hourly_sales: 0 
-                   };
-                   newCME.financials.gross_sales+= tx.gross_sales_money.amount;
-                   newCME.financials.net_sales+=tx.net_total_money.amount;
-                   newCME.financials.total_tips+=tx.tip_money.amount;
-                   newCME.financials.total_discounts+=tx.discount_money.amount;
-                   newCME.financials.total_refunds+=tx.refunded_money.amount;
-                   cmes.push(newCME); 
-               };
-
-           } else {
-               //   IF NO VALID WIW EMPLOYEE ID WAS FOUND, ADD TX TO AN UNKONOWN CME
-               
-               //   FIRST CHECK FOR AN UNKOWN CME
-               console.log('CME is undefined');
-
-           };
-
-        });
-
-    });
-
+    //var cmes        = initializeCMEs(wiwShifts);
     
-    console.log(cmes);
+    console.log(wiwSites);
+    console.log(wiwShifts);
 
     //  RETURN ALL CMES LIST
-    return cmes;
+    return wiwSites;
 };
 
 /*
@@ -169,11 +98,43 @@ function sitesHasher(allSites) {
 
     //  ITERATE OVER ALL SITES
     allSites.forEach(function(site) {
-        sitesHash[site.id] = site.name;
+        sitesHash[site.id] = {
+            name: site.name,
+            txs: {}
+        };
     });
 
     //  RETURN VARIABLES
     return sitesHash;
+};
+
+/*
+*   SHIFTS HASHER
+*
+*/
+function shiftsHasher(wiwShifts) {
+    //define local variables
+    var shiftsHash = {};
+
+    console.log('hashing shifts', wiwShifts.length);
+
+    //  ITERATE OVER SHIFTS
+    wiwShifts.forEach(function(shift) {
+        //  DEFINE LOCAL VARIABLES
+        var startTime = moment(shift.start_time).format();
+        var endTime = moment(shift.end_time).format();
+        var startEndString = startTime + "/" + endTime;
+       
+        //  IF THIS EMPLOYEE HASN'T BEEN ADDED YET, DO SO
+        if(shiftsHash[shift.user_id] == undefined) { 
+            shiftsHash[shift.user_id] = {};
+        };
+        
+        shiftsHash[shift.user_id][startEndString] = shift.site_id
+
+    });
+
+    return shiftsHash;
 };
 
 /*
