@@ -151,6 +151,8 @@ function dailyShiftReporter(salesDate, previousDay) {
             //  3.  BUILD SALES DAYS LIST
             var salesDaysList = collections.assignTxsToCMEs(allRawData);
 
+            console.log('got these salesDays');
+            console.log(salesDaysList);
             //  4.  BUILD EMPLOYEE EARNINGS REPORT
 
             //  5.  EMAIL EARNINGS REPORTS
@@ -159,7 +161,7 @@ function dailyShiftReporter(salesDate, previousDay) {
             //  7.  CREATE QBO EMPLOYEE INVOICES
             //  8.  CREATE QBO PAYMENTS RECEIVED
             //  9.  EMAIL MFG REPORT
-            
+
             resolve(allRawData);
 
         }).catch(function error(e) {
