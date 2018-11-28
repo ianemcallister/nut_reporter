@@ -13,16 +13,16 @@ var wiwapi  = require('./wheniwork/wiwapp');
 
 anprop.dailyShiftReporter('2018-11-03T15:00:00-07:00', false)
 .then(res => { 
-	console.log("got", res.length, "records"); 
-	//var writepath = path.join(__dirname, '.', 'JSON', 'allRecords.json');
+	//console.log("got", res.length, "records"); 
+	var writepath = path.join(__dirname, '.', 'JSON', 'cmeList.json');
 
-	/*fs.writeFile(writepath, JSON.stringify(res, null, '\t'), 'utf8', function (err) {
+	fs.writeFile(writepath, JSON.stringify(res, null, '\t'), 'utf8', function (err) {
 		if (err) {
 		    return console.log(err);
 		}
 
 		console.log("The file was saved!");	
-	});*/
+	});
 }).catch(err => { 
 	console.log(err); 
 });

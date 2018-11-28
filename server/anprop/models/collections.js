@@ -18,6 +18,7 @@ var collections = {
     initializeCMEs: initializeCMEs,
     sqIdsHasher: sqIdsHasher,
     shiftsHasher:shiftsHasher,
+    shiftCMEHasher: shiftCMEHasher,
     findCustomer: findCustomer
 };
 
@@ -28,12 +29,13 @@ var collections = {
 */
 function assignTxsToCMEs(allRawData) {
     //  DEFINE LOCAL VARIABLES
-    var sqTxs       = allRawData[0];
+    var sqTxs           = allRawData[0];
     //var sqrItems    = allRawData[1];
     //var sqrMods     = allRawData[2];
-    var wiwUsers    = sqIdsHasher(allRawData[3]);
-    var wiwShifts   = shiftsHasher(allRawData[4]);
-    var wiwSites    = sitesHasher(allRawData[5]);
+    var wiwUsers        = sqIdsHasher(allRawData[3]);
+    var wiwShifts       = shiftsHasher(allRawData[4]);
+    var shiftIdsByCME   = shiftCMEHasher(allRawData[4]);
+    var wiwSites        = sitesHasher(allRawData[5], shiftIdsByCME);
     //var cmes        = initializeCMEs(wiwShifts);
     
     //console.log(wiwSites);
@@ -160,17 +162,29 @@ function sqIdsHasher(wiwEmpIds) {
 /*
 *   SITES HASHER
 */
-function sitesHasher(allSites) {
+function sitesHasher(allSites, shiftIdsByCME) {
     //  DEFINE NEW VARIABLES
-    var sitesHash = {
-    };
+    var sitesHash = {};
 
     //  ITERATE OVER ALL SITES
     allSites.forEach(function(site) {
         sitesHash[site.id] = {
             name: site.name,
-            txs: {}
+            txs: {},
+            shifts: {}
         };
+    });
+
+    //  ITERATE OVER ALL SHIFT CMES
+    Object.keys(shiftIdsByCME).forEach(function(key) {
+
+        //  ITERATE OVER ALL SHIFT IDS
+        Object.keys(shiftIdsByCME[key]).forEach(function(shiftId) {
+
+            //  ADD THE SHIFT BY KEY
+            sitesHash[key].shifts[shiftId] = shiftIdsByCME[key][shiftId];
+        });
+
     });
 
     //  RETURN VARIABLES
@@ -205,6 +219,37 @@ function shiftsHasher(wiwShifts) {
     });
 
     return shiftsHash;
+};
+
+/*
+*   SHIFT CME HASHER
+*
+*
+*/
+function shiftCMEHasher(wiwShifts) {
+    // DEFINE LOCAL VARIABLES
+    var cmeShiftHash = {};
+
+    //  ITERATE OVER ALL SHIFTS
+    wiwShifts.forEach(function(shift) {
+        //  DEFINE LOCAL VARIABLES
+        var startTime = moment(shift.start_time).format();
+        var endTime = moment(shift.end_time).format();
+        var startEndString = startTime + "/" + endTime;
+        
+        //  CREATE THE SITE ID IF NEED BE
+        if(cmeShiftHash[shift.site_id] == undefined)
+            cmeShiftHash[shift.site_id] = {};
+
+        //  CREATE THE SHIFT ID OBJECT
+        cmeShiftHash[shift.site_id][shift.id] = {
+            empId: shift.user_id,
+            timeBlock: startEndString
+        };
+
+    });
+
+    return cmeShiftHash;
 };
 
 /*
