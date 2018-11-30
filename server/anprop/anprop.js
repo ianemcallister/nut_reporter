@@ -8,10 +8,11 @@
 //console.log('in the anpop.js file');
 
 //DEFINE DEPENDENCIES
-var moment      = require('moment-timezone');
-var square      = require('../square/square');
-var wiw         = require('../wheniwork/wiwapp');
-var collections = require('./models/collections');
+var moment          = require('moment-timezone');
+var square          = require('../square/square');
+var wiw             = require('../wheniwork/wiwapp');
+var collections     = require('./models/collections');
+var earningsReports = require('./earningsReports');
 
 //DEFINE THE MODULE
 var ahnuts = {
@@ -157,6 +158,7 @@ function dailyShiftReporter(salesDate, previousDay) {
             //  4.  BUILD EMPLOYEE EARNINGS REPORT
 
             //  5.  EMAIL EARNINGS REPORTS
+            earningsReports.sendReports(salesDaysList);
 
             //  6.  CREATE QBO CUSTOMER INVOICES
             //  7.  CREATE QBO EMPLOYEE INVOICES

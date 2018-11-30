@@ -10,10 +10,17 @@ var path 	= require('path');
 var anprop  = require('./anprop/anprop');
 var square  = require('./square/square');
 var wiwapi  = require('./wheniwork/wiwapp');
+var earningsReports = require('./anprop/earningsReports');
+
+//var CMEList = JSON.parse(fs.readFileSync(path.join(__dirname, "JSON",'cmeList.json'), 'utf8'));
+
+//earningsReports.compile.finRep(CMEList);
 
 anprop.dailyShiftReporter('2018-11-03T15:00:00-07:00', false)
 .then(res => { 
-	//console.log("got", res.length, "records"); 
+	//console.log(res);
+	//console.log("got records"); 
+	
 	var writepath = path.join(__dirname, '.', 'JSON', 'cmeList.json');
 
 	fs.writeFile(writepath, JSON.stringify(res, null, '\t'), 'utf8', function (err) {

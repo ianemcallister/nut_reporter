@@ -34,7 +34,7 @@ function assignTxsToCMEs(allRawData) {
     //var sqrMods     = allRawData[2];
     var wiwUsers        = sqIdsHasher(allRawData[3]);
     var wiwShifts       = shiftsHasher(allRawData[4]);
-    var shiftIdsByCME   = shiftCMEHasher(allRawData[4]);
+    var shiftIdsByCME   = shiftCMEHasher(allRawData[4], allRawData[3]);
     var wiwSites        = sitesHasher(allRawData[5], shiftIdsByCME);
     //var cmes        = initializeCMEs(wiwShifts);
     
@@ -207,7 +207,7 @@ function shiftsHasher(wiwShifts) {
         var startTime = moment(shift.start_time).format();
         var endTime = moment(shift.end_time).format();
         var startEndString = startTime + "/" + endTime;
-       
+          
         //  IF THIS EMPLOYEE HASN'T BEEN ADDED YET, DO SO
         if(shiftsHash[shift.user_id] == undefined) { 
             shiftsHash[shift.user_id] = {};
@@ -226,25 +226,40 @@ function shiftsHasher(wiwShifts) {
 *
 *
 */
-function shiftCMEHasher(wiwShifts) {
+function shiftCMEHasher(wiwShifts, wiwUsers) {
     // DEFINE LOCAL VARIABLES
     var cmeShiftHash = {};
+    var employeeProfile = {};
 
     //  ITERATE OVER ALL SHIFTS
     wiwShifts.forEach(function(shift) {
         //  DEFINE LOCAL VARIABLES
-        var startTime = moment(shift.start_time).format();
-        var endTime = moment(shift.end_time).format();
-        var startEndString = startTime + "/" + endTime;
-        
+        var startTime = moment(shift.start_time);
+        var endTime = moment(shift.end_time);
+        var startEndString = startTime.format() + "/" + endTime.format();
+
         //  CREATE THE SITE ID IF NEED BE
         if(cmeShiftHash[shift.site_id] == undefined)
             cmeShiftHash[shift.site_id] = {};
 
+        //  LOAD THE USER PROFILE
+        wiwUsers.forEach(function(empRcrd) {
+
+            if(empRcrd.id == shift.user_id) employeeProfile = empRcrd;
+
+        });
+
         //  CREATE THE SHIFT ID OBJECT
         cmeShiftHash[shift.site_id][shift.id] = {
             empId: shift.user_id,
-            timeBlock: startEndString
+            email: employeeProfile.email,
+            empName: {
+                first: employeeProfile.first_name,
+                last: employeeProfile.last_name,
+            },
+            timeBlock: startEndString,
+            base_hrly_rate: employeeProfile.hourly_rate * 100,
+            duration_hrs: endTime.diff(startTime, 'minutes') / 60
         };
 
     });
