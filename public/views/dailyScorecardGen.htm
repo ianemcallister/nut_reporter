@@ -1,0 +1,58 @@
+<div>
+    
+    <!-- HEADER ROW -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>Daily Scorecard Generator</h1>
+        </div>
+    </div>
+    
+    <!-- HEADER ROW -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+            <!-- REPORT DATE -->
+            <label for="reportDate">Date:</label>
+            <input  type="datetime-local"
+                    id='reportDate'
+            >
+
+            <br>
+            <!-- REPORT START TIME -->
+            <label for="reportStartTime">Start Time:</label>
+            <input  type="number"
+                    id='reportStartTime'
+            >
+
+            <br>
+            <!-- REPORT END TIME -->
+            <label for="reportEndTime">End Time:</label>
+            <input  type="number"
+                    id='reportEndTime'
+            >
+
+            <br>
+            <!-- REPORT FOR EMPLOYEE -->
+            <label for="reportEmployee">Employee:</label>
+            <input  list="employeeList"
+                    id='reportEmployee'
+            >
+
+            <br>
+            <!-- REPORT FOR CUSTOMER/CME -->
+            <label for="reportCME">CME:</label>
+            <input  list="CMEList"
+                    id='reportCME'
+            >
+
+            <br>
+            <button class='btn btn-success'
+                    type="submit"
+            >Submit</button>
+
+        </div>
+    </div>
+
+</div>
+
+<!--Datalists-->

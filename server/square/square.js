@@ -20,7 +20,9 @@ var square = {
         '14E8S7P16JQDM'     //utah
     ],
     V1: {
-        business: {},
+        business: {
+            list_employees: list_employees
+        },
         transactions: {
             list_payments: list_payments,
             retreive_payment: retreive_tx_payment
@@ -213,7 +215,7 @@ function list_payments(locationId, opts, cursor) {
     if(opts == undefined) opts = {};
     opts['cursor'] = cursor;    // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
-    console.log(locationId, opts.beginTime, opts.endTime);
+    console.log(locationId, opts);
 
     //  RETURN ASYNC WORK
     return new Promise(function(resolve, reject) {
@@ -228,7 +230,7 @@ function list_payments(locationId, opts, cursor) {
                 tx_payments_list(locationId, opts, data.cursor)
                 .then(function success(s) {
 
-                    console.log(data.transactions.length);
+                    console.log('got this many transactions', data.transactions.length);
                     
                     //  ITERATE THROUGH THE OLD DATA AND ADD IT TO THE NEWLY RETURNED DATA
                     data.transactions.forEach(function(tx) {
@@ -604,6 +606,33 @@ function multipleLocations(fnPath, options) {
             reject(e);
         });
 
+    });
+
+};
+
+function list_employees() {
+    //  DEFINE LOCAL VARIABLES
+    var apiInstance = new SquareConnect.V1EmployeesApi();
+    var opts = { 
+        //'order': "order_example", // String | The order in which employees are listed in the response, based on their created_at field.      Default value: ASC 
+        //'beginUpdatedAt': "beginUpdatedAt_example", // String | If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format
+        //'endUpdatedAt': "endUpdatedAt_example", // String | If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format.
+        //'beginCreatedAt': "beginCreatedAt_example", // String | If filtering results by their created_at field, the beginning of the requested reporting period, in ISO 8601 format.
+        //'endCreatedAt': "endCreatedAt_example", // String | If filtering results by their created_at field, the end of the requested reporting period, in ISO 8601 format.
+        //'status': "status_example", // String | If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE).
+        //'externalId': "externalId_example", // String | If provided, the endpoint returns only employee entities with the specified external_id.
+        'limit': 56, // Number | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+        //'batchToken': "batchToken_example" // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+    };
+
+    //  RETURN ASYNC WORK
+    return new Promise(function(resolve, reject) {
+        
+        apiInstance.listEmployees(opts).then(function(data) {
+            resolve(data);
+          }, function(error) {
+            console.error(error);
+          });
     });
 
 };

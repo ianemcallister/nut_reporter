@@ -17,6 +17,7 @@ var earningsReports = require('./earningsReports');
 //DEFINE THE MODULE
 var ahnuts = {
     _timeBookender: _timeBookender,
+    process_txs: process_txs,
     downloadDailyShifts: downloadDailyShifts,
     updateANDBSalesData: updateANDBSalesData,
     processManagerSalesReport: processManagerSalesReport,
@@ -174,6 +175,257 @@ function dailyShiftReporter(salesDate, previousDay) {
     });
 
 }
+
+/*
+*   PROCESS TRANSACTIONS
+*
+*   This method receives a request object and returns an analysis object
+*/
+function process_txs(txs_col_req) {
+    // DEFINE LOCAL VARIABLES
+    var opts = {
+        beginTime: txs_col_req.begin_time,
+        endTime: txs_col_req.end_time
+    };
+
+
+    //  RETURN ASYNC WORK
+    return new Promise(function(resolve, reject) {
+
+        //  COLLECT TRANSACTIONS
+        square.V1.transactions.list_payments(txs_col_req.location, opts).then(function(allTxs) {
+
+            //  
+            var returnObject = _analyzeTransactions(allTxs, txs_col_req);
+            
+            //  UPON SUCCESS PASS THE OBJECT BACK
+            resolve(returnObject);
+
+
+        });
+        
+    });
+
+};
+
+/*
+*   ANALYZE TRANSACTIONS
+*
+*/
+function _analyzeTransactions(txs, params) {
+
+    //  DEFINE LOCAL VARIABLES
+    var filters = {
+        employees: params.employees,
+        devices: params.devices
+    };
+    var filteredTxs = _filterTransactionByDeviceEmp(txs, filters);
+    var returnObject = {
+        sales: {
+            gross_sales: _calculateGrossSales(filteredTxs),
+            refunds: _sumRefunds(filteredTxs),
+            net_sales: _calculateNetSales(filteredTxs),
+            no_of_sales: _sumNoSales(filteredTxs),
+            average_sale: _calculateAverageSale(filteredTxs),
+            sales_per_hour: _calculateSalesPerHour(filteredTxs, params.sales_hrs),
+            hours: {
+                labor: params.labor_hrs,
+                sales: params.sales_hrs
+            },
+            pay: {
+                base_rate: params.base_rate_hrly,
+                comm_multiplier: _calculateCommMultiplier(filteredTxs, params.sales_hrs),
+                comm_rate: _calculateCommRate(filteredTxs, params.sales_hrs),
+                base: _calculateBasePay(params.labor_hrs, params.base_rate_hrly),
+                ot: _calculateOTPay(params.labor_hrs, params.base_rate_hrly),
+                commissions: _calculateCommPay(filteredTxs, params.sales_hrs),
+                tips: _sumTips(filteredTxs),
+                total: _calculateTotalPay(filteredTxs, params.labor_hrs, params.sales_hrs, params.base_rate_hrly)
+            }
+        },
+        mfg: {
+
+        }
+    };
+
+    //  RETURN VALUE
+    return returnObject;
+
+};
+
+function _calculateTotalPay(txs, laborHrs, salesHrs, baseRate) {
+    return  _calculateBasePay(laborHrs, baseRate) +
+            _calculateOTPay(laborHrs, baseRate) +
+            _calculateCommPay(txs, salesHrs) +
+            _sumTips(txs);
+};
+
+function _calculateCommPay(txs, salesHrs) {
+    return (((_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / salesHrs) * (((_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / salesHrs) / 2752 / 100)) * salesHrs;
+};
+
+function _calculateCommRate(txs, salesHrs) {
+    return ((_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / salesHrs) * (((_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / salesHrs) / 2752 / 100)
+};
+
+function _calculateCommMultiplier(txs, salesHrs) {
+    return ((_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / salesHrs) / 2752 / 100
+};
+
+function _calculateSalesPerHour(txs, salesHrs) {
+    return (_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / salesHrs;
+};
+
+function _calculateAverageSale(txs) {
+    return (_sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)) / _sumNoSales(txs)
+};
+
+function _calculateNetSales(txs) {
+    return _sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)
+};
+
+function _calculateGrossSales(txs) {
+    return _sumGrossSales(txs) - _sumTips(txs);
+}
+
+function _calculateBasePay(hrs, rate) {
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  CONFIRM THE NUMBER OF HOURS
+    if(hrs > 8) {
+        returnValue = 8 * rate;
+    } else {
+        returnValue = hrs * rate;
+    };
+
+    //  RETURN VALUE
+    return returnValue;
+};
+
+function _calculateOTPay(hrs, rate) {
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  CONFIRM THE NUMBER OF HOURS
+    if(hrs > 8) {
+        returnValue = (hrs - 8) * rate * 1.5;
+    };
+
+    //  RETURN VALUE
+    return returnValue;   
+};
+
+function _sumNoSales(filteredTxs) {
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  ITERATE OVER ALL TXS
+    filteredTxs.forEach(function(tx) {
+
+        //  IF THE TRANSACTION HAD A DOLLAR VALUE ABOVE ZERO THEN INCRIMENT THE COUNTER
+        if(tx.total_collected_money.amount > 0) returnValue++;
+
+    });
+
+    //  RETURN VALUE
+    return returnValue;   
+};
+
+function _sumRefunds(filteredTxs){
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  ITERATE OVER ALL TXS
+    filteredTxs.forEach(function(tx) {
+
+        //add tips when found
+        returnValue += tx.refunded_money.amount;
+
+    });
+
+    //  RETURN VALUE
+    return returnValue;
+};
+
+function _sumGrossSales(filteredTxs) {
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  ITERATE OVER ALL TXS
+    filteredTxs.forEach(function(tx) {
+
+        //add tips when found
+        returnValue += tx.total_collected_money.amount;
+
+    });
+
+    //  RETURN VALUE
+    return returnValue;
+};
+
+function _sumTips(filteredTxs) {
+
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  ITERATE OVER ALL TXS
+    filteredTxs.forEach(function(tx) {
+
+        //add tips when found
+        returnValue += tx.tip_money.amount;
+
+    });
+
+    //  RETURN VALUE
+    return returnValue;
+};
+
+/*
+*   FILTER TRANSACTIONS
+*
+*   Returns only the requried transactions
+*/
+function _filterTransactionByDeviceEmp(txs, filters) {
+
+    //  DEFINE LOCAL VARIABLES
+    var filteredTransactions = [];
+
+    //  ITERATE OVER ALL TRANSACTIONS
+    txs.forEach(function(tx) {
+
+        //console.log(tx.tender);
+
+        //  define local variables
+        var flagToPull = false;
+
+        //  first filter by device if necessary
+        if(filters.devices.length > 0) {
+
+        };
+
+        //  then filter by employee if necessary
+        if(filters.employees.length > 0) {
+
+            //  pull out transactions that match the required employee id
+            filters.employees.forEach(function(empId) {
+                
+                if(tx.tender[0].employee_id == empId) flagToPull = true;
+            });
+
+        };
+
+        //  if this transaction was flagged at any point add it to the return batch
+        if(flagToPull) filteredTransactions.push(tx);
+
+    });
+
+    //  noitify progress
+    console.log('returning ', filteredTransactions.length, " records");
+    
+    //  RETURN FILTERED TRANSACTIONS
+    return filteredTransactions;
+};
 
 //  EXPORT THE MODULE
 module.exports = ahnuts;

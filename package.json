@@ -20,9 +20,21 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "gulp": "^3.9.1",
+    "handlebars": "^4.0.12",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
+    "nodemailer": "^4.7.0",
     "square-connect": "^2.20180918.1",
     "wheniwork": "^2.0.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-ng-annotate": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1"
   }
 }

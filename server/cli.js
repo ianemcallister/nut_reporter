@@ -5,59 +5,36 @@
 */
 
 //  DECLARE DEPENDENCIES 
-var fs 		= require('fs');
+//var fs 		= require('fs');
 var path 	= require('path');
 var anprop  = require('./anprop/anprop');
-var square  = require('./square/square');
-var wiwapi  = require('./wheniwork/wiwapp');
-var earningsReports = require('./anprop/earningsReports');
+//var square  = require('./square/square');
+//var wiwapi  = require('./wheniwork/wiwapp');
+//var earningsReports = require('./anprop/earningsReports');
 
-//var CMEList = JSON.parse(fs.readFileSync(path.join(__dirname, "JSON",'cmeList.json'), 'utf8'));
+//	DEFINE LOCAL VARIABLES
+var txs_col_req = {
+	analysis: ['sales'],
+	location: 'M53KQT35YKE5C',
+	begin_time: '2019-02-08T00:00:00-07:00',
+	end_time: "2019-02-08T23:59:59-07:00",
+	devices: [],
+	employees: ['rUxLgAqsVklCN_14dfbE'],
+	adjustments: [],
+	sales_hrs: 9,
+	labor_hrs: 9.25,
+	base_rate_hrly: 1200,
+	emails: {
+		employee: [],
+		supervisors: [],
+		other: []
+	},
+	CME_info: {
+		name: ""
+	}
+};
 
-//earningsReports.compile.finRep(CMEList);
-
-anprop.dailyShiftReporter('2018-11-03T15:00:00-07:00', false)
-.then(res => { 
-	//console.log(res);
-	//console.log("got records"); 
-	
-	var writepath = path.join(__dirname, '.', 'JSON', 'cmeList.json');
-
-	fs.writeFile(writepath, JSON.stringify(res, null, '\t'), 'utf8', function (err) {
-		if (err) {
-		    return console.log(err);
-		}
-
-		console.log("The file was saved!");	
-	});
-}).catch(err => { 
-	console.log(err); 
+//	RUN THE FUNCTION
+anprop.process_txs(txs_col_req).then(function(data) {
+	console.log(data);
 });
-
-/*Promise.all(square.multipleLocations('V1/transactions/payments_list', { beginTime: "2018-11-03T00:00:00-07:00", endTime: "2018-11-04T00:00:00-07:00" }))
-.then(res => { 
-    
-    //console.log(res);
-
-    var writepath = path.join(__dirname, '.', 'JSON', 'transactions.json');
-
-	fs.writeFile(writepath, JSON.stringify(res, null, '\t'), 'utf8', function (err) {
-		if (err) {
-		    return console.log(err);
-		}
-
-		console.log("The file was saved!");	
-	});
-})
-.catch(err => { console.log(err); });*/
-
-/*wiwapi.shifts.list({ start: '2018-11-03 00:00:00', end: "2018-11-03 23:59:59"})
-.then(res => { console.log(res); })
-.catch(err => { console.log(err); });
-*/
-
-/*wiwapi.sites.list()
-.then(res => { console.log(res); })
-.catch(err => { console.log(err); });*/
-
-//anprop.downloadDailyShifts('2018-11-02T22:18:50.000000+00:00');

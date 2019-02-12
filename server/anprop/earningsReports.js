@@ -5,15 +5,21 @@
 */
 
 //NOTIFY PROGRESS
-console.log('in the earningsReports.js file');
+//console.log('in the earningsReports.js file');
 
 //DEFINE DEPENDENCIES
+var moment                  = require('moment-timezone');
+var _earningsReportTemplate = require('./models/empEarnRepTemp.js');
+var _mfgReportTemplate      = require('./models/mfgRepTemplate.js')
 
 //DEFINE THE MODULE
 var er = {
     compile: {
         finRep: compFinRep,
         empEarnReps: compEmpEarnReps
+    },
+    format: {
+        empEarnReps: frmtEmpEarnReps
     },
     sendReports: sendReports
 };
@@ -53,40 +59,152 @@ function compFinRep(salesDaysList) {
 *
 *   This method 
 *   @PARAMS - salesDaysList | JSON object
-*   @RETURN - empEarnRepsArray | JSON array
+*   @RETURN - empEarnReports | JSON object
 */
 function compEmpEarnReps(salesDaysList) {
     //  DEFINE LOCAL VARIABLS
-    var empEarnRepsArray = [];
-    var earningsReport = {
-        labor: {
-            base_rate: 0,
-            overtime_rate: 0,
-            base_hrs: 0.00,
-            overtime_hrs: 0.00,
-            total_hrs: 0.00,
-            base_pay: 0,
-            overtime_pay: 0,
-            total_labor_pay: 0
-        },
-        sales: {
-            gross_sales: 0,
-            refunds: 0,
-            net_gross_sales: 0
-        },
-        tips: 0,
-        commissions: {
-            rate: 0.00,
-            earned: 0
-        },
-        total_LTC_Pay: 0,
-        hourly_earning_rate: 0,
-        shifts: []
-    };
+    var empEarnReports = {};
+    var earningsReport = _earningsReportTemplate;
 
+    //  ITERATE OVER ALL SALESDAYS
+    Object.keys(salesDaysList).forEach(function(key) {
+
+        //  DEFINE LOCAL VARIABLES
+        var shiftsArray = Object.keys(salesDaysList[key].shifts);
+
+        //  CHECK FOR LOGGED SHIFTS
+        if(shiftsArray.length > 0) {
+
+            //  DEFINE LOCAL VARIABLES
+            var empId = "";
+            
+            //  IF SHIFTS WERE FOUND ITERATE THROUGH THEM
+            shiftsArray.forEach(function(sftId) {
+
+                //  DEFINE LOCAL VARIABLES
+                empId = salesDaysList[key].shifts[sftId].empId;
+
+                //  CHECK IF THE EMPLOYEE ALREADY HAS A REPORT
+                if(empEarnReports[empId] == undefined) {
+                    //  CREATE THE OBJECT
+                    empEarnReports[empId] = new earningsReport;
+                    
+                    //console.log(empEarnReports[empId]);
+
+                    empEarnReports.test();
+
+                    //  START ASSIGNING VALUES
+                    empEarnReports[empId].employee.first_name = salesDaysList[key].shifts[sftId].empName.first;
+                    empEarnReports[empId].employee.last_name = salesDaysList[key].shifts[sftId].empName.last;
+                    empEarnReports[empId].employee.email = salesDaysList[key].shifts[sftId].email;
+                    empEarnReports[empId].labor.base_rate = salesDaysList[key].shifts[sftId].base_hrly_rate;
+                    empEarnReports[empId].labor.overtime_rate = salesDaysList[key].shifts[sftId].base_hrly_rate * 1.5;
+
+                    //console.log(empEarnReports[empId]);
+
+                    //  SAVE THE SHIFT DAY
+                    var shiftBlock = salesDaysList[key].shifts[sftId].timeBlock;
+                    var sbArray = shiftBlock.split("/");
+                    //  TODO: COME BACK TO THIS LASTER AND ADD THE DATE
+                    empEarnReports[empId].reportDay = sbArray[0]; //moment(sbArray[0]).format("medium");
+                }
+
+                //  ADD THE SHIFT TO THE REPORT
+                empEarnReports[empId].shifts.push(salesDaysList[key].shifts[sftId]);
+                
+                //  ADD THE TOTAL HOURS 
+                empEarnReports[empId].labor.total_hrs += salesDaysList[key].shifts[sftId].duration_hrs;
+                
+                //  ADD BASE HOURS AND OVERTIME HOURS
+                var currentBaseHours = empEarnReports[empId].labor.base_hrs;
+                var newHours = salesDaysList[key].shifts[sftId].duration_hrs;
+                if(currentBaseHours + newHours > 8) {
+                    empEarnReports[empId].labor.base_hrs = 8
+                    empEarnReports[empId].labor.overtime_hrs = (currentBaseHours + newHours) - 8
+                } else {
+                    empEarnReports[empId].labor.base_hrs = currentBaseHours + newHours;
+                };
+
+                //  CALCULATE BASE PAY
+                empEarnReports[empId].labor.base_pay = empEarnReports[empId].labor.base_hrs * empEarnReports[empId].labor.base_rate;
+
+                //  CALCULATE OVERTIME PAY
+                empEarnReports[empId].labor.overtime_pay = empEarnReports[empId].labor.overtime_hrs * empEarnReports[empId].labor.overtime_rate;
+            
+                //  CALCULATE TOTAL LABOR PAY
+                empEarnReports[empId].labor.total_labor_pay = empEarnReports[empId].labor.overtime_pay + empEarnReports[empId].labor.base_pay
+            
+            });
+
+            //  ITERATE OVER ALL TRANSACTIONS TO CALCULATE SALES
+            Object.keys(salesDaysList[key].txs).forEach(function(txKey) {
+
+                //  ADD UP ALL TIP AMOUNTS
+                empEarnReports[empId].tips += salesDaysList[key].txs[txKey].tip_money.amount;
+
+                //  ADD UP ALL GROSS SALES AMOUNTS
+                empEarnReports[empId].sales.gross_sales += salesDaysList[key].txs[txKey].gross_sales_money.amount;
+
+                //  ADD SALES TRANSACTIONS
+                if(salesDaysList[key].txs[txKey].gross_sales_money.amount >= 0) empEarnReports[empId].sales.sales_txs++;
+
+                //  ADD UP ALL REFUND AMOUNTS
+                empEarnReports[empId].sales.refunds += salesDaysList[key].txs[txKey].refunded_money.amount;
+
+                //  ADD UP DISCOUNTS AND COMPS
+                empEarnReports[empId].sales.discounts_comps += salesDaysList[key].txs[txKey].discount_money.amount;
+                
+                //  CALCULATE NET SALES AMOUNT
+                empEarnReports[empId].sales.net_gross_sales = empEarnReports[empId].sales.gross_sales + empEarnReports[empId].sales.refunds;
+
+                //  CALCUATE COMMISION
+                var commissions = (empEarnReports[empId].sales.net_gross_sales / 5.75) - empEarnReports[empId].labor.total_labor_pay;
+                if(commissions > 0) empEarnReports[empId].commissions.earned = commissions
+                else empEarnReports[empId].commissions.earned = 0;
+
+                //  CALCULATE COMMISSION RATE
+                empEarnReports[empId].commissions.rate = empEarnReports[empId].commissions.earned / empEarnReports[empId].sales.net_gross_sales
+            
+                //  CALCULATE TOTAL LTC PAY FOR THIS SHIFT
+                empEarnReports[empId].total_LTC_Pay = empEarnReports[empId].labor.total_labor_pay + empEarnReports[empId].commissions.earned + empEarnReports[empId].tips;
+            
+                //  CALCULATE HOURLY LTC EARNINGS RATE
+                empEarnReports[empId].hourly_earning_rate = empEarnReports[empId].total_LTC_Pay / empEarnReports[empId].labor.total_hrs;
+            });
+
+        }    
+
+    });
 
     //  RETURN 
-    return empEarnRepsArray;
+    return empEarnReports;
+};
+
+/*
+*   FORMAT EMPLOYEES EARNIGNS REPORTS
+*
+*   This method takes a report object and applies the data to a template, retrning an html formatted report.
+*/
+function frmtEmpEarnReps(frmtEmpEarnRepsDataCollection) {
+    //  DEFINE LOCAL VARIABLES
+    var allReports = [];
+    var frmtedReport = function() {
+        this.htmlRpt = "";
+        this.textRpt = "";
+    };
+
+    //  ITERATE OVER EMPLOYEES
+    Object.keys(frmtEmpEarnRepsDataCollection).forEach(function(empId) {
+
+        //  CREATE A NEW REPORT
+        var employeesReport = new frmtedReport;
+
+        //  WHEN FINISHED PUSH THE REPORT ONTO THE ARRAY
+        allReports.push(employeesReport);
+    });
+
+    //  RETURN REPORT OBJECT
+    return allReports;
 };
 
 /*

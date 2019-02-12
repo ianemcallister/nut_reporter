@@ -252,6 +252,7 @@ function shiftCMEHasher(wiwShifts, wiwUsers) {
         //  CREATE THE SHIFT ID OBJECT
         cmeShiftHash[shift.site_id][shift.id] = {
             empId: shift.user_id,
+            posId: shift.position_id,
             email: employeeProfile.email,
             empName: {
                 first: employeeProfile.first_name,
