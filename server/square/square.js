@@ -7,6 +7,9 @@
 //  DEFINE DEPENDENCIES
 var SquareConnect 	= require('square-connect');
 var defaultClient 	= SquareConnect.ApiClient.instance;
+var fs 		= require('fs');
+var path 	= require('path');
+
 
 // Configure OAuth2 access token for authorization: oauth2
 var _oauth2 		= defaultClient.authentications['oauth2'];
@@ -213,28 +216,40 @@ function list_payments(locationId, opts, cursor) {
     var self = this;
     var apiInstance = new SquareConnect.V1TransactionsApi();
     if(opts == undefined) opts = {};
-    opts['cursor'] = cursor;    // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+    opts['batchToken'] = cursor;    // String | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
-    console.log(locationId, opts);
+    console.log("Payments Request:", locationId, opts);
 
     //  RETURN ASYNC WORK
     return new Promise(function(resolve, reject) {
 
         //  HIT THE SQUARE SERVER
-        apiInstance.listPayments(locationId, opts).then(function(data) {
-            
+        apiInstance.listPaymentsWithHttpInfo(locationId, opts).then(function(resp) {
+
+            //write the file out for examination 
+            /*var writePath = path.join(__dirname, "..", "JSON/squareResponse.json");
+            fs.writeFile(writePath, JSON.stringify(resp, null, '\t'), 'utf8', function (err) {
+                if(err) { return console.log(err); }
+                console.log('File saved!');
+            });*/
+
             //  CHECK FOR A CURSOR
-            if(data.cursor != undefined) {
+            if(resp.response.header.link != undefined) {
+
+                //  distill the cursor
+                var newCurser = _distillCursor(resp.response.header.link);
+                console.log('found this cursur', newCurser);
 
                 //  IF THE CURSOR WAS FOUND REVISIT THE LIST
-                tx_payments_list(locationId, opts, data.cursor)
+                list_payments(locationId, opts, newCurser)
                 .then(function success(s) {
 
-                    console.log('got this many transactions', data.transactions.length);
+                    //console.log('txs from the last batch', s.length)
+                    //console.log('txs from the first batch', resp.data.length);
                     
                     //  ITERATE THROUGH THE OLD DATA AND ADD IT TO THE NEWLY RETURNED DATA
-                    data.transactions.forEach(function(tx) {
-                        s.transactions.push(tx);
+                    resp.data.forEach(function(tx) {
+                        s.push(tx);
                     });
 
                     //  FULLFILL THE PROMISE
@@ -250,7 +265,7 @@ function list_payments(locationId, opts, cursor) {
                 console.log('reachd the bottom of', locationId);
 
                 //  IF NO CURSOR WAS FOUND WE'VE REACHED THE BOTTOM OF THE LIST
-                resolve(data);
+                resolve(resp.data);
             }
             
         }, function error(e) {
@@ -259,6 +274,13 @@ function list_payments(locationId, opts, cursor) {
         });
     });
 
+};
+
+function _distillCursor(rawLink) {
+    splitLink = rawLink.split('?batch_token=');
+    rawCursor = splitLink[1];
+    splitCursor = rawCursor.split('&begin_time=');//('>;rel=\'next\'');
+    return splitCursor[0];
 };
 
 /*

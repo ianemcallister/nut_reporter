@@ -16,13 +16,13 @@ var anprop  = require('./anprop/anprop');
 var txs_col_req = {
 	analysis: ['sales'],
 	location: 'M53KQT35YKE5C',
-	begin_time: '2019-02-08T00:00:00-07:00',
-	end_time: "2019-02-08T23:59:59-07:00",
+	begin_time: '2019-02-10T00:00:00-07:00',
+	end_time: "2019-02-10T23:59:59-07:00",
 	devices: [],
 	employees: ['rUxLgAqsVklCN_14dfbE'],
 	adjustments: [],
-	sales_hrs: 9,
-	labor_hrs: 9.25,
+	sales_hrs: 7,
+	labor_hrs: 7.5,
 	base_rate_hrly: 1200,
 	emails: {
 		employee: [],

@@ -244,7 +244,8 @@ function _analyzeTransactions(txs, params) {
             }
         },
         mfg: {
-
+            retail: {},
+            wholesale: {}
         }
     };
 
