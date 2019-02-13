@@ -2,57 +2,139 @@
     
     <!-- HEADER ROW -->
     <div class="row">
+        <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <h1>Daily Scorecard Generator</h1>
         </div>
+        </div>
     </div>
     
-    <!-- HEADER ROW -->
+    <!-- FILTERS -->
     <div class="row">
+        <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             
             <!-- REPORT DATE -->
             <label for="reportDate">Date:</label>
-            <input  type="datetime-local"
+            <input  type="date"
+                    ng-model="vm.date"
                     id='reportDate'
             >
 
             <br>
+            <!-- REPORT LOCATION -->
+            <label for="reportLocation">Location:</label>
+            <input  list="allLocationsList"
+                    ng-model="vm.selectedLocation"
+                    id='reportLocation'
+            >
+            
+            <br>
             <!-- REPORT START TIME -->
             <label for="reportStartTime">Start Time:</label>
-            <input  type="number"
+            <input  type="text"
+                    ng-model="vm.strTime"
                     id='reportStartTime'
             >
 
             <br>
             <!-- REPORT END TIME -->
             <label for="reportEndTime">End Time:</label>
-            <input  type="number"
+            <input  type="text"
+                    ng-model='vm.endTime'
                     id='reportEndTime'
             >
 
             <br>
             <!-- REPORT FOR EMPLOYEE -->
             <label for="reportEmployee">Employee:</label>
-            <input  list="employeeList"
+            <input  list="allEmpList"
+                    name='allEmpList'
                     id='reportEmployee'
+                    ng-model='vm.selectedEmployee'
             >
 
             <br>
             <!-- REPORT FOR CUSTOMER/CME -->
             <label for="reportCME">CME:</label>
-            <input  list="CMEList"
+            <input  type="text"
                     id='reportCME'
             >
 
             <br>
             <button class='btn btn-success'
                     type="submit"
-            >Submit</button>
+                    ng-click='vm.submitQuery()'>
+                Submit
+            </button>
 
+            
+
+        </div>
         </div>
     </div>
 
 </div>
 
+<!-- RESULTS TABLE-->
+<div>
+        <!-- HEADER ROW -->
+        <div class="row">
+                <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>Results</h2>
+                </div>
+                </div>
+        </div>
+        
+        <!-- RESULTS -->
+        <div class="row">
+                <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <!--<table>
+                                <tr>
+                                        <td>Something</td>
+                                        <td>Something</td>
+                                </tr>
+                        </table>-->
+                        Gross Sales: {{vm.txsSummary.sales.gross_sales / 100 | currency : "$" : 2}} <br>
+                        Discounts: {{vm.txsSummary.sales.discounts / 100 | currency : "$" : 2}} <br>
+                        Refunds: {{vm.txsSummary.sales.refunds / 100 | currency : "$" : 2}} <br>
+                        Net Sales: {{vm.txsSummary.sales.net_sales / 100 | currency : "$" : 2}} <br>
+                        Average Sale: {{vm.txsSummary.sales.average_sale / 100 | currency : "$" : 2}} <br>
+                        Sales/Hr: {{vm.txsSummary.sales.sales_per_hour / 100 | currency : "$" : 2}} <br>
+                        Labor Hrs: {{vm.txsSummary.sales.hours.labor | number : 2 }} <br>
+                        Sales Hrs: {{vm.txsSummary.sales.hours.sales | number : 2}} <br>
+                        Cash Collected: {{vm.txsSummary.sales.funds_collection.cash / 100 | currency : "$" : 2}} <br>
+                        Credit Collected: {{vm.txsSummary.sales.funds_collection.card / 100 | currency : "$" : 2}} <br>
+                        Base Rate: {{vm.txsSummary.sales.pay.base_rate / 100 | currency : "$" : 2}} <br>
+                        Base Pay: {{vm.txsSummary.sales.pay.base / 100 | currency : "$" : 2}} <br>
+                        OT Pay: {{vm.txsSummary.sales.pay.ot / 100 | currency : "$" : 2}} <br>
+                        Commissions: {{vm.txsSummary.sales.pay.commissions / 100 | currency : "$" : 2}} <br>
+                        Tips: {{vm.txsSummary.sales.pay.tips / 100 | currency : "$" : 2}} <br>
+                        Total Pay: {{vm.txsSummary.sales.pay.total / 100 | currency : "$" : 2}} <br>
+                        Effective Hourly Pay: {{vm.txsSummary.sales.pay.EHP / 100 | currency : "$" : 2}} <br>
+                       
+                        <button class='btn btn-success'
+                                type="submit"
+                                ng-click=''>
+                        E-Mail
+                        </button>                        
+
+                </div>       
+                </div>
+        </div>
+</div>
+
 <!--Datalists-->
+<datalist name='allLocationsList' id='allLocationsList'>
+        <option ng-repeat="location in vm.locationsList track by $index"
+                ng-value='location.id'
+        > {{location.value}}</option>
+</datalist>
+
+<datalist name='allEmpList' id='allEmpList'>
+        <option ng-repeat="employee in vm.employeeList track by $index"
+                ng-value='employee.id'
+        > {{employee.value}}</option>
+</datalist>

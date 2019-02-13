@@ -223,6 +223,7 @@ function _analyzeTransactions(txs, params) {
     var returnObject = {
         sales: {
             gross_sales: _calculateGrossSales(filteredTxs),
+            discounts: _sumDiscounts(filteredTxs),
             refunds: _sumRefunds(filteredTxs),
             net_sales: _calculateNetSales(filteredTxs),
             no_of_sales: _sumNoSales(filteredTxs),
@@ -232,6 +233,11 @@ function _analyzeTransactions(txs, params) {
                 labor: params.labor_hrs,
                 sales: params.sales_hrs
             },
+            funds_collection: {
+                cash: _sumCollectedFunds(filteredTxs, "CASH"),
+                card: _sumCollectedFunds(filteredTxs, 'CREDIT_CARD'),
+                other: _sumCollectedFunds(filteredTxs, 'OTHER')
+            },
             pay: {
                 base_rate: params.base_rate_hrly,
                 comm_multiplier: _calculateCommMultiplier(filteredTxs, params.sales_hrs),
@@ -240,18 +246,50 @@ function _analyzeTransactions(txs, params) {
                 ot: _calculateOTPay(params.labor_hrs, params.base_rate_hrly),
                 commissions: _calculateCommPay(filteredTxs, params.sales_hrs),
                 tips: _sumTips(filteredTxs),
-                total: _calculateTotalPay(filteredTxs, params.labor_hrs, params.sales_hrs, params.base_rate_hrly)
+                total: _calculateTotalPay(filteredTxs, params.labor_hrs, params.sales_hrs, params.base_rate_hrly),
+                EHP: _calculateEHP(filteredTxs, params.labor_hrs, params.sales_hrs, params.base_rate_hrly)
             }
         },
         mfg: {
             retail: {},
-            wholesale: {}
+            wholesale: {
+                consumed: {
+                    
+                },
+                produced: {}
+            }
         }
     };
 
     //  RETURN VALUE
     return returnObject;
 
+};
+
+function _sumCollectedFunds(txs, type) {
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = {
+        CASH: 0,
+        CREDIT_CARD: 0,
+        OTHER: 0
+    };
+
+    //iterate over all the transactions
+    txs.forEach(function(tx) {
+
+        //iterate over all tenders
+        tx.tender.forEach(function(tender) {
+
+            returnValue[tender.type] += tender.total_money.amount
+        });
+
+    });
+
+    return returnValue[type];
+};
+
+function _calculateEHP(txs, laborHrs, salesHrs, baseRate) {
+    return _calculateTotalPay(txs, laborHrs, salesHrs, baseRate) / laborHrs;
 };
 
 function _calculateTotalPay(txs, laborHrs, salesHrs, baseRate) {
@@ -282,11 +320,11 @@ function _calculateAverageSale(txs) {
 };
 
 function _calculateNetSales(txs) {
-    return _sumGrossSales(txs) - _sumTips(txs) - _sumRefunds(txs)
+    return _sumGrossSales(txs) - _sumDiscounts(txs) - _sumTips(txs) - _sumRefunds(txs)
 };
 
 function _calculateGrossSales(txs) {
-    return _sumGrossSales(txs) - _sumTips(txs);
+    return _sumGrossSales(txs) - _sumDiscounts(txs) - _sumTips(txs);
 }
 
 function _calculateBasePay(hrs, rate) {
@@ -331,6 +369,22 @@ function _sumNoSales(filteredTxs) {
 
     //  RETURN VALUE
     return returnValue;   
+};
+
+function _sumDiscounts(filteredTxs) {
+    //  DEFINE LOCAL VARIABLES
+    var returnValue = 0;
+
+    //  ITERATE OVER ALL TXS
+    filteredTxs.forEach(function(tx) {
+
+        //add tips when found
+        returnValue += tx.discount_money.amount;
+
+    });
+
+    //  RETURN VALUE
+    return returnValue;
 };
 
 function _sumRefunds(filteredTxs){

@@ -10,6 +10,7 @@ console.log('runnign the server');
 //declare all dependencies
 var express		= require('express');
 var bodyParser 	= require('body-parser');
+var anprop  	= require('./anprop/anprop');
 
 //return the express object
 var serverApp = express();
@@ -56,6 +57,23 @@ serverApp.get('/', function(req, res) {
 *	POST Declarations
 */
 serverApp.post('/', function(req, res) {
+
+});
+
+serverApp.post('/queryEmployeeTransactions', function(req, res) {
+	//advise of the post
+	console.log(req.body);
+	
+	//	PRCOESS TRANSACTIONS
+	anprop.process_txs(req.body).then(function(data) {
+		
+		//	return affirmative
+		res.setHeader('Content-Type', 'application/json');
+		res.status(200);
+		res.send(JSON.stringify(data));
+
+	});
+
 
 });
 
