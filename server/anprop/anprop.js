@@ -18,12 +18,31 @@ var earningsReports = require('./earningsReports');
 var ahnuts = {
     _timeBookender: _timeBookender,
     process_txs: process_txs,
+    employeeList: employeeList,
     downloadDailyShifts: downloadDailyShifts,
     updateANDBSalesData: updateANDBSalesData,
     processManagerSalesReport: processManagerSalesReport,
     processEmployeeEarningsReport: processEmployeeEarningsReport,
     test: test,
     dailyShiftReporter: dailyShiftReporter
+};
+
+function employeeList() {
+    //  DEFINE LOCAL VARIABLES
+    var returnObject = [];
+
+    //  RETURN ASYNC WORK
+    return new Promise(function(resolve, reject) {
+
+        //  D
+        square.V1.employees.list().then(function(employeeList) {
+            
+            resolve(employeeList)
+            
+        });
+
+    });
+    
 };
 
 /*

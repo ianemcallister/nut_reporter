@@ -40,12 +40,15 @@ function locationsList() {
 };
 
 //  EMPLOYEE LIST
-function employeeList() {
+function employeeList(dataService) {
     //return the promise
     //return 'good test';
     return new Promise(function(resolve, reject) {
         //hit the server for the 
-        resolve([{value: "Ian McAllister", id: "rUxLgAqsVklCN_14dfbE"},{value:"Steve Young",id:"something"}]);
+        dataService.sqr_employees.list().then(function(response) {
+            resolve(response);
+        });
+        
     });
 };
 

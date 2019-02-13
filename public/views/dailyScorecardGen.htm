@@ -10,9 +10,11 @@
     </div>
     
     <!-- FILTERS -->
+    <div class="container">
     <div class="row">
-        <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+       
+        <!--First Set of Values-->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             
             <!-- REPORT DATE -->
             <label for="reportDate">Date:</label>
@@ -71,7 +73,30 @@
             
 
         </div>
+
+        <!--Second set of values-->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                <label for="salesHours">Sales Hours:</label>
+                <input  type="number"
+                        ng-model='vm.salesHours'
+                        id='salesHours'
+                >
+
+                <label for="laborHours">Labor Hours:</label>
+                <input  type="number"
+                        ng-model='vm.laborHours'
+                        id='laborHours'
+                >
+
+                <label for="baseRate">Base Rate:</label>
+                <input  type="number"
+                        ng-model='vm.baseRate'
+                        id='baseRate'
+                >
         </div>
+        
+    </div>
     </div>
 
 </div>
@@ -136,5 +161,5 @@
 <datalist name='allEmpList' id='allEmpList'>
         <option ng-repeat="employee in vm.employeeList track by $index"
                 ng-value='employee.id'
-        > {{employee.value}}</option>
+        > {{employee.first_name}} {{employee.last_name}}</option>
 </datalist>

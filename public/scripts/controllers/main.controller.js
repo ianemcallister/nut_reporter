@@ -15,6 +15,9 @@ function mainController($scope, $log, $location, locationsList, employeeList, CM
     self.endTime = "23:59:59-07:00";
     self.selectedEmployee = "";
     self.selectedLocation = "";
+    self.laborHours = 7.5;
+    self.salesHours = 7;
+    self.baseRate = 12.00;
     self.txsSummary = {};
 
     //  LISTS
@@ -34,12 +37,12 @@ function mainController($scope, $log, $location, locationsList, employeeList, CM
             devices: [],
             employees: [self.selectedEmployee],
             adjustments: [],
-            sales_hrs: 7,
-            labor_hrs: 7.5,
-            base_rate_hrly: 1200,
+            sales_hrs: self.salesHours,
+            labor_hrs: self.laborHours,
+            base_rate_hrly: self.baseRate * 100,
             emails: {
                 employee: [],
-                supervisors: [],
+                supervisors: ['info@ah-nuts.com'],
                 other: []
             },
             CME_info: {
@@ -57,9 +60,20 @@ function mainController($scope, $log, $location, locationsList, employeeList, CM
     function _buildDateString(date, time) {
         //  DEFINE LOCAL VARIABLES
         //  RETURN STRING
-        return  date.getFullYear() + "-0" +
-                (date.getMonth() + 1) + "-0" +
-                date.getDate() + "T" +
+        return  date.getFullYear() + "-" +
+                _formatMonthDate(date.getMonth() + 1) + "-" +
+                _formatMonthDate(date.getDate()) + "T" +
                 time
+    };
+
+    function _formatMonthDate(int) {
+        //  DEFINE LOCAL VARIABLES
+        var returnValue = "";
+
+        if(int >= 10) returnValue = int;
+        else returnValue = "0" + int;
+
+        //  RETURN VARIABLE
+        return returnValue;
     };
 };

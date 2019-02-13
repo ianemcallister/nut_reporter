@@ -77,6 +77,22 @@ serverApp.post('/queryEmployeeTransactions', function(req, res) {
 
 });
 
+serverApp.post('/squarepos/employees', function(req, res) {
+	//	advise of the post
+	console.log(req.body);
+
+
+	anprop.employeeList().then(function(employeeList) {
+
+		//	PROCESS TRANACTIONS
+		res.status(200);
+		res.send(JSON.stringify(employeeList));
+		//res.send(JSON.stringify([{value: "Ian McAllister", id: "rUxLgAqsVklCN_14dfbE"},{value:"Steve Young",id:"something"}]));
+
+	});
+
+});
+
 /*
 *	Opening Up the server
 */

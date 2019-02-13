@@ -8,7 +8,7 @@
 //var fs 		= require('fs');
 var path 	= require('path');
 var anprop  = require('./anprop/anprop');
-//var square  = require('./square/square');
+var square  = require('./square/square');
 //var wiwapi  = require('./wheniwork/wiwapp');
 //var earningsReports = require('./anprop/earningsReports');
 
@@ -35,6 +35,11 @@ var txs_col_req = {
 };
 
 //	RUN THE FUNCTION
-anprop.process_txs(txs_col_req).then(function(data) {
+/*anprop.process_txs(txs_col_req).then(function(data) {
 	console.log(data);
+});*/
+
+square.V1.employees.list().then(function(employeeList) {
+
+	console.log(employeeList);
 });
